@@ -1,0 +1,194 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="./output.css" rel="stylesheet">
+  <link href="https://fonts.cdnfonts.com/css/druk-trial" rel="stylesheet">
+  <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+</head>
+
+<body
+  class="bg-primary flex flex-col justify-center font-druk-bold tracking-wide font-extrabold transition-all ease-in">
+
+  <!-- menu -->
+
+  <nav class="bg-primary w-[100%] h-24 items-center justify-between flex fixed top-0 z-50">
+    <div>
+      <img src="../assets/Logo.png" class="md:w-12 md:h-12 xl:w-20 xl:h-20 h-14 w-14 " alt="logo" />
+    </div>
+    <div
+      class="w-[80%] xl:w-[78%] nav-links md:static absolute items-center left-0 top-[-100%] bg-primary md:w-auto transition-all ease-in ">
+      <ul
+        class="flex items-center justify-between md:flex-row flex-col gap-[2vw] xl:gap-[0vw]  md:border-l-2 border-l-0 border-white h-10 pl-2 xl:pl-16  ">
+        <li>
+          <a href="#" class="text-white hover:text-gray-300 duration-500 text-xs">Hotel & Hostel</a>
+        </li>
+        <li>
+          <a href="#" class="text-white hover:text-gray-300 duration-500 text-xs">Rehearsal</a>
+        </li>
+        <li>
+          <a href="#" class="text-white hover:text-gray-300 duration-500 text-xs">Venue</a>
+        </li>
+        <li>
+          <a href="#" class="text-white hover:text-gray-300 duration-500 text-xs">Hall of Fame</a>
+        </li>
+        <li>
+          <a href="#" class="text-white hover:text-gray-300 duration-500 text-xs">Entertainment</a>
+        </li>
+        <li>
+          <a href="#" class="text-white hover:text-gray-300 duration-500 text-xs">Restaurant</a>
+        </li>
+        <li>
+          <a href="#" class="text-white hover:text-gray-300 duration-500 text-xs">Media</a>
+        </li>
+      </ul>
+    </div>
+    <div class="w-[40%] xl:w-[16%]  ">
+      <ul class="flex w-[100%] justify-around items-center ">
+        <li>
+          <ion-icon onclick="onToggleMenu(this)" name="menu" class="text-white text-3xl md:hidden"></ion-icon>
+        </li>
+        <li>
+          <button
+            class="bg-white text-primary duration-500 pl-3 pr-3 pt-1 pb-1 border-2 hover:bg-primary hover:text-white transition font-druk-xcond md:text-xl xl:text-3xl text-2xl tracking-widest ">GET
+            TICKETS</button>
+        </li>
+        <li>
+          <button
+            class="bg-white text-primary duration-500 pl-3 pr-3 pt-1 pb-1 border-2 hover:bg-primary hover:text-white transition font-druk-xcond md:text-xl xl:text-3xl text-2xl tracking-widest ">BOOK
+            NOW</button>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <script>
+    const navLinks = document.querySelector('.nav-links')
+    function onToggleMenu(e) {
+      e.name = e.name === 'menu' ? 'close' : 'menu'
+      navLinks.classList.toggle('top-[12vw]')
+    }
+  </script>
+
+  <!-- menu -->
+
+  <!-- hero -->
+
+  <section class="hero w-[99vw] flex h-[90vh] ">
+    <div class=" relative flex items-center justify-center w-full">
+      <div class="relative flex z-30 justify-center items-center text-white w-full ">
+
+        <div class=" flex justify-between w-4/5">
+
+          <div class="flex flex-col w-4/12 justify-start  ">
+            <div class=" font-druk-trial tracking-wide text-[5vw] font-normal leading-[10vh] flex flex-col">
+              <span class="p-0 m-0">WELCOME</span>
+              <span>TO THE MOST</span>
+              <span>MUSICAL</span>
+              <span>PLACE IN SF.</span>  
+            </div>
+            <P class="flex flex-col w-full justify-start text-xl pt-5 ">
+              <span>A cool f*cking place to stay,</span>
+              <span>enjoy & play good music.</span>
+              <span>It's like Disney for music lovers!</span>
+                
+            </P>
+          </div>
+
+          <div class="w-4/12">
+            <div class="w-[23vw] ">
+              <img src="../assets/Logo.png" alt="logo">
+            </div>
+          </div>
+
+          <div class="w-4/12 font-druk-trial font-normal flex items-end justify-end text-2xl">
+            <button class=" bg-white text-black hover:bg-primary hover:text-white  border-2 border-white transition duration-500 px-12 py-3">ABOUT</button>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <video src="../assets/videos/HOME 16x9.mp4" muted loop autoplay class="absolute z-10 w-auto min-w-full min-h-full ">
+    </video>
+
+  </section>
+
+  <!-- hero -->
+
+  <!-- rehearsal -->
+
+  <section class="min-w-full bg-primary h-[60vh] z-40 flex ">
+    <img>
+    <video src="../assets/videos/Reharsal 16x9.mp4" alt="rehearsal studios" muted loop autoplay class="min-h-full ">
+    </video>
+    </img>
+
+    <div class=" w-[50vw] text-white items-center justify-center bg-primary flex flex-col absolute right-0 h-[60vh]">
+      <div class="w-3/5 h-5/6 lg:h-1/3 flex flex-col justify-between">
+        <span class="text-2xl font-bold">Rehearsal Studios /</span>
+        <span class="text-7xl font-druk-trial font-normal">TAKE YOUR REHEARSAL TO THE NEXT LEVEL /</span>
+        <p class="font-normal w-5/6">Whether you're a solo project or a band, uor brand-new music rehearsal studios are
+          affordable for all
+          musicians.</p>
+      </div>
+      <div class="flex items-end justify-end w-4/6 mt-16 ">
+        <button class="w-36 flex font-druk-trial font-normal p-2 text-2xl border-2 justify-center items-center hover:text-primary hover:bg-white hover:border-primary transition duration-500 ">SEE ALL
+          STUDIOS</button>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- rehearsal -->
+
+  <!-- hotel -->
+
+  <section class="flex bg-secondary h-[80vh] min-w-full">
+
+
+  </section>
+
+  <!-- hotel -->
+
+  <!-- hall of fame -->
+  <section class="flex bg-primary h-[80vh] min-w-full justify-center text-white ">
+    <div class=" w-[80vw] h-full relative flex z-30 justify-center items-center ">
+
+      <div class=" w-1/3 flex flex-col h-4/5 text-2xl  ">
+        <span>Experience the bay</span>
+        <span>area music's legacy/</span>
+      </div>
+      <div
+        class=" w-1/3 h-4/5 flex justify-center items-center text-8xl font-druk-text-trial font-normal tracking-normal	">
+        <span>HALL OF FAME</span>
+      </div>
+      <div class=" w-1/3 h-4/5 flex justify-end items-end">
+        <button
+          class=" text-white duration-500 py-2 px-9 border-2 hover:bg-white hover:text-primary hover:border-primary  transition font-druk-xcond md:text-xl xl:text-3xl text-3xl tracking-widest ">LEARN
+          MORE</button>
+      </div>
+
+
+    </div>
+
+    <video src="../assets/videos/Hall 16x9.mp4" muted loop autoplay
+      class="flex absolute z-10 w-auto min-w-full min-h-full ">
+    </video>
+  </section>
+  <!-- hall of fame -->
+
+  <!-- about -->
+  <section class="flex bg-secondary h-[80vh] min-w-full z-40">
+
+
+  </section>
+  <!-- about -->
+
+
+</body>
+
+</html>
