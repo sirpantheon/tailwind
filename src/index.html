@@ -15,14 +15,14 @@
 
   <!-- menu -->
 
-  <nav class="bg-primary w-[100%] h-24 items-center justify-between flex fixed top-0 z-50">
+  <nav class="bg-primary min-w-full h-[15vh] items-center flex fixed top-0 z-50 p-0 m-0">
     <div>
-      <img src="../assets/Logo.png" class="md:w-12 md:h-12 xl:w-20 xl:h-20 h-14 w-14 " alt="logo" />
+      <img src="../assets/Logo.png" class="md:w-[10vw]md:h-[10vw] xl:w-20 xl:h-20 h-14 w-14 lg:mr-3 " alt="logo" />
     </div>
     <div
-      class="w-[80%] xl:w-[78%] nav-links md:static absolute items-center left-0 top-[-100%] bg-primary md:w-auto transition-all ease-in ">
+      class="md:w-[70vw] flex  nav-links md:static absolute items-center left-0 top-[-100%] bg-primary transition-all ease-in ">
       <ul
-        class="flex items-center justify-between md:flex-row flex-col gap-[2vw] xl:gap-[0vw]  md:border-l-2 border-l-0 border-white h-10 pl-2 xl:pl-16  ">
+        class="flex items-center justify-between md:flex-row flex-col gap-[2vw] md:gap-[0vw] md:min-w-full md:border-l-2 border-l-0 border-white md:h-8 h-10 pl-2 md:pl-16  ">
         <li>
           <a href="#" class="text-white hover:text-gray-300 duration-500 text-xs">Hotel & Hostel</a>
         </li>
@@ -46,14 +46,14 @@
         </li>
       </ul>
     </div>
-    <div class="w-[40%] xl:w-[16%]  ">
-      <ul class="flex w-[100%] justify-around items-center ">
+    <div class="w-[40%] xl:w-[16%]   ">
+      <ul class="flex w-[100%] justify-around items-center lg:w-[20vw] ">
         <li>
-          <ion-icon onclick="onToggleMenu(this)" name="menu" class="text-white text-3xl md:hidden"></ion-icon>
+          <ion-icon onclick="onToggleMenu(this)" name="menu" class="text-white text-3xl md:hidden "></ion-icon>
         </li>
         <li>
           <button
-            class="bg-white text-primary duration-500 pl-3 pr-3 pt-1 pb-1 border-2 hover:bg-primary hover:text-white transition font-druk-xcond md:text-xl xl:text-3xl text-2xl tracking-widest ">GET
+            class="bg-white text-primary duration-500 pl-3 pr-3 pt-1 pb-1 border-2 hover:bg-primary hover:text-white transition font-druk-xcond md:text-xl xl:text-3xl lg:text-xl text-xl tracking-widest ">GET
             TICKETS</button>
         </li>
         <li>
@@ -76,24 +76,25 @@
 
   <!-- hero -->
 
-  <section class="hero w-[99vw] flex h-[90vh] ">
+  <section class="hero min-h-full flex h-[100vh]">
     <div class=" relative flex items-center justify-center w-full">
       <div class="relative flex z-30 justify-center items-center text-white w-full ">
 
-        <div class=" flex justify-between w-4/5">
+        <div class=" flex justify-between w-4/5 md:pt-32 ">
 
           <div class="flex flex-col w-4/12 justify-start  ">
-            <div class=" font-druk-trial tracking-wide text-[5vw] font-normal leading-[10vh] flex flex-col">
-              <span class="p-0 m-0">WELCOME</span>
-              <span>TO THE MOST</span>
-              <span>MUSICAL</span>
-              <span>PLACE IN SF.</span>  
+            <div
+              class=" font-druk-trial tracking-wide text-[5vw] font-normal leading-[9vh] flex flex-col justify-start p-0 m-0">
+              <p>WELCOME</p>
+              <p>TO THE MOST</p>
+              <p>MUSICAL</p>
+              <p>PLACE IN SF.</p>
             </div>
             <P class="flex flex-col w-full justify-start text-xl pt-5 ">
               <span>A cool f*cking place to stay,</span>
               <span>enjoy & play good music.</span>
               <span>It's like Disney for music lovers!</span>
-                
+
             </P>
           </div>
 
@@ -104,7 +105,8 @@
           </div>
 
           <div class="w-4/12 font-druk-trial font-normal flex items-end justify-end text-2xl">
-            <button class=" bg-white text-black hover:bg-primary hover:text-white  border-2 border-white transition duration-500 px-12 py-3">ABOUT</button>
+            <button
+              class=" bg-white text-black hover:bg-primary hover:text-white  border-2 border-white transition duration-500 px-12 py-3">ABOUT</button>
           </div>
 
         </div>
@@ -121,22 +123,27 @@
 
   <!-- rehearsal -->
 
-  <section class="min-w-full bg-primary h-[60vh] z-40 flex ">
+  <section class="min-w-full bg-primary md:h-[80vh] z-40 flex ">
     <img>
-    <video src="../assets/videos/Reharsal 16x9.mp4" alt="rehearsal studios" muted loop autoplay class="min-h-full ">
+    <video src="../assets/videos/Reharsal 16x9.mp4" alt="rehearsal studios" muted loop autoplay
+      class="object-cover min-h-full ">
     </video>
     </img>
 
-    <div class=" w-[50vw] text-white items-center justify-center bg-primary flex flex-col absolute right-0 h-[60vh]">
-      <div class="w-3/5 h-5/6 lg:h-1/3 flex flex-col justify-between">
+    <div class=" md:w-[50vw] text-white items-center justify-center bg-primary flex flex-col absolute right-0 h-[80vh]">
+      <div class=" md:h-1/3 flex flex-col justify-between leading-[3vh]">
         <span class="text-2xl font-bold">Rehearsal Studios /</span>
-        <span class="text-7xl font-druk-trial font-normal">TAKE YOUR REHEARSAL TO THE NEXT LEVEL /</span>
-        <p class="font-normal w-5/6">Whether you're a solo project or a band, uor brand-new music rehearsal studios are
-          affordable for all
-          musicians.</p>
+        <span class="text-7xl font-druk-trial font-normal">TAKE YOUR REHEARSAL</span>
+        <span class="text-7xl font-druk-trial font-normal">TO THE NEXT LEVEL /</span>
+        <div class="leading-[3vh] pt-4">
+          <p class="font-normal">Whether you're a solo project or a band, uor brand-new music </p>
+          <p class="font-normal">rehearsal studios are affordable for all musicians.</p>
+        </div>
       </div>
-      <div class="flex items-end justify-end w-4/6 mt-16 ">
-        <button class="w-36 flex font-druk-trial font-normal p-2 text-2xl border-2 justify-center items-center hover:text-primary hover:bg-white hover:border-primary transition duration-500 ">SEE ALL
+      <div class="flex items-end justify-end w-4/6 mt-28 ">
+        <button
+          class="w-36 flex font-druk-trial font-normal p-2 text-2xl border-2 justify-center items-center hover:text-primary hover:bg-white hover:border-primary transition duration-500 ">SEE
+          ALL
           STUDIOS</button>
       </div>
     </div>
@@ -146,24 +153,128 @@
   <!-- rehearsal -->
 
   <!-- hotel -->
+  <style>
+    .carousel-item {
+      min-width: calc(100% / 4);
+      /* Ajuste para quantos itens visíveis você quer */
+    }
+  </style>
 
-  <section class="flex bg-secondary h-[80vh] min-w-full">
+  <section class="flex bg-secondary items-center justify-center h-screen">
 
+    <div class="flex flex-col text-white justify-center items-start w-[80%] h-[90%] ">
+      <div class="flex flex-col items-start justify-start  w-[35%]">
+        <div
+          class="flex flex-col font-druk-trial tracking-wide text-[5vw] font-normal leading-[9vh] justify-start p-0 m-0">
+          <span class="text-4xl font-bold mb-5">Hotel /</span>
+          <span>THE ONLY</span>
+          <span>HOTEL THAT</span>
+          <span>ROCKS</span>
+        </div>
+
+        <div class="leading-[3vh]">
+          <div class="flex flex-col font-medium mt-5">
+            <p>We're the only music-themed hotel & hostel</p>
+            <p>in San Francisco built directly into Music City</p>
+            <p>San Francisco!</p>
+          </div>
+
+          <div class="flex flex-col font-medium mt-3">
+            <p>Travel and make new friends by staying in our</p>
+            <p>hostel rooms, jam with the SF local talent in </p>
+            <p>the rehearsal studios or karaoke rooms, and</p>
+            <p>experience live music like no hotel has ever</p>
+            <p>done before in our on-site venues!</p>
+          </div>
+        </div>
+        <div class="flex w-full justify-end items-end mt-4 ">
+          <button
+            class="w-36 flex font-druk-trial font-normal p-2 text-2xl border-2 justify-center items-center hover:text-primary hover:border-primary transition duration-500 ">OUR
+            ROOMS</button>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="absolute right-0  ">
+      <div class="relative w-[60vw] max-w-5xl overflow-hidden h-[70vh] flex ">
+        <div id="carousel" class="flex transition-transform duration-300 h-full items-end">
+          <div class="carousel-item flex-shrink-0 py-2 px-2 w-[35%] h-[60vh] ">
+            <img src="../assets/carousel/carousel-1.png" alt="Item 1" class="w-full h-[55vh] object-cover ">
+          </div>
+          <div class="carousel-item flex-shrink-0 py-2 px-2 w-[35%] h-[60vh] ">
+            <img src="../assets/carousel/carousel-2.png" alt="Item 2" class="w-full h-[55vh] object-cover">
+          </div>
+          <div class="carousel-item flex-shrink-0 py-2 px-2 w-[35%] h-[60vh] ">
+            <img src="../assets/carousel/carousel-3.png" alt="Item 3" class="w-full h-[55vh] object-cover">
+          </div>
+          <div class="carousel-item flex-shrink-0 py-2 px-2 w-[35%] h-[60vh] ">
+            <img src="../assets/carousel/carousel-4.png" alt="Item 4" class="w-full h-[55vh] object-cover">
+          </div>
+          <div class="carousel-item flex-shrink-0 py-2 px-2 w-[35%] h-[60vh] ">
+            <img src="../assets/carousel/carousel-1.png" alt="Item 5" class="w-full h-[55vh] object-cover">
+          </div>
+          <div class="carousel-item flex-shrink-0 py-2 px-2 w-[35%] h-[60vh] r">
+            <img src="../assets/carousel/carousel-2.png" alt="Item 6" class="w-full h-[55vh] object-cover">
+          </div>
+        </div>
+
+        <button onclick="prevSlide()"
+          class="absolute top-12 left-[60%] transform -translate-y-1/2 bg-white text-black p-2 rounded-full shadow-md focus:outline-none">
+          &lt;
+        </button>
+        <button onclick="nextSlide()"
+          class="absolute top-12 right-[25%] transform -translate-y-1/2 bg-white text-black p-2 rounded-full shadow-md focus:outline-none">
+          &gt;
+        </button>
+      </div>
+      <script>
+        let currentSlide = 0;
+        const totalItems = document.querySelectorAll('#carousel .carousel-item').length;
+        const visibleItems = 3; // Quantos itens são visíveis de cada vez
+
+        function updateCarousel() {
+          document.getElementById('carousel').style.transform = `translateX(-${currentSlide * (100 / visibleItems)}%)`;
+        }
+
+        function nextSlide() {
+          currentSlide = (currentSlide + 1) % (totalItems / visibleItems);
+          updateCarousel();
+        }
+
+        function prevSlide() {
+          currentSlide = (currentSlide - 1 + (totalItems / visibleItems)) % (totalItems / visibleItems);
+          updateCarousel();
+        }
+
+        // Initialize carousel
+        updateCarousel();
+      </script>
+
+    </div>
 
   </section>
 
   <!-- hotel -->
 
+  <!-- venue -->
+
+  <section class="bg-primary min-w-full h-[80vh]">
+
+  </section>
+
+  <!-- venue -->
+
   <!-- hall of fame -->
   <section class="flex bg-primary h-[80vh] min-w-full justify-center text-white ">
-    <div class=" w-[80vw] h-full relative flex z-30 justify-center items-center ">
+    <div class=" w-[80vw] h-full py-16 relative flex z-30 justify-center items-center ">
 
       <div class=" w-1/3 flex flex-col h-4/5 text-2xl  ">
         <span>Experience the bay</span>
         <span>area music's legacy/</span>
       </div>
       <div
-        class=" w-1/3 h-4/5 flex justify-center items-center text-8xl font-druk-text-trial font-normal tracking-normal	">
+        class=" w-1/3 h-4/5 flex justify-center items-center text-7xl font-druk-text-trial font-normal tracking-normal	">
         <span>HALL OF FAME</span>
       </div>
       <div class=" w-1/3 h-4/5 flex justify-end items-end">
@@ -176,18 +287,86 @@
     </div>
 
     <video src="../assets/videos/Hall 16x9.mp4" muted loop autoplay
-      class="flex absolute z-10 w-auto min-w-full min-h-full ">
+      class="flex absolute z-10 w-auto min-w-full min-h-full object-cover ">
     </video>
   </section>
   <!-- hall of fame -->
 
   <!-- about -->
-  <section class="flex bg-secondary h-[80vh] min-w-full z-40">
+  <section class="flex bg-secondary h-[80vh] min-w-full z-40 items-center justify-center">
+
+    <div class="absolute w-[80vw] h-[70vh] justify-center items-center pt-[10vh]">
+      <div>
+        <div class="flex flex-col text-white justify-center items-start w-[80%] h-[90%] ">
+          <div class="flex flex-col items-start justify-center w-[50%]">
+            <div
+              class="flex flex-col font-druk-trial tracking-wide text-[5vw] font-normal leading-[9vh] justify-start p-0 m-0">
+              <span class="text-4xl font-bold mb-5">About /</span>
+              <span>WE KEEP THE</span>
+              <span>CANDLE BURNING</span>
+            </div>
+
+            <div class="leading-[3vh]">
+              <div class="flex flex-col font-medium mt-5">
+                <p>Music City San Francisco is the a music HUB that San Francisco</p>
+                <p>has been waiting for. Founded by musician Rudy colombini, MCSF</p>
+                <p>is designed with the community in mind, built to to keep the</p>
+                <p>Bay Area Legacy alive!</p>
+              </div>
+
+            </div>
+            <div class="flex w-full justify-end items-end mt-[5vh] ">
+              <button
+                class="w-36 flex font-druk-trial font-normal p-2 text-2xl border-2 justify-center items-center hover:text-primary hover:border-primary transition duration-500 ">LEARN
+                MORE</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="w-[50vw] h-full  flex">
+
+    </div>
+    <div class="w-[50vw] h-full bg-gray-950 flex">
+      <img src="../assets/Rudy-Colombini(7)-copy.png" alt="Rudy-Colombini" class="object-cover" />
+    </div>
 
 
   </section>
   <!-- about -->
 
+  <!-- instagram -->
+
+  <section class="bg-primary min-w-full h-[80vh]">
+
+  </section>
+
+  <!-- instagram -->
+
+  <!-- mapa -->
+
+  <section class="bg-white min-w-full h-[80vh]">
+
+  </section>
+
+  <!-- mapa -->
+
+  <!-- subscribe -->
+
+  <section class="bg-secondary min-w-full h-[50vh]">
+
+  </section>
+
+  <!-- subscribe -->
+
+  <!-- footer -->
+
+  <section class="bg-primary min-w-full h-[50vh]">
+
+  </section>
+
+  <!-- footer -->
 
 </body>
 
