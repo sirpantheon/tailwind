@@ -15,12 +15,12 @@
 
   <!-- menu -->
 
-  <nav class="bg-primary min-w-full md:h-[10vh] h-[9vh] items-center flex justify-between fixed top-0 z-50 px-2">
+  <nav class="bg-primary min-w-full md:h-[13vh] h-[9vh] items-center flex justify-between fixed top-0 z-50 px-2">
     <div>
       <img src="../assets/Logo.png" class="md:w-[10vw] md:h-[8vw] xl:w-20 xl:h-20 h-14 w-14 lg:mr-3 " alt="logo" />
     </div>
     <div
-      class="md:w-[75vw] w-full flex nav-links md:static absolute items-center left-0 top-[-500%] justify-center bg-primary 
+      class="md:w-[75vw] w-full flex nav-links md:static absolute items-center left-0 top-[-1000%] justify-center bg-primary 
       duration-500 transition-all ease-in ">
       <ul
         class="flex items-center justify-between md:flex-row flex-col gap-[2vw] md:gap-[0vw] md:min-w-full 
@@ -70,7 +70,7 @@
     const navLinks = document.querySelector('.nav-links')
     function onToggleMenu(e) {
       e.name = e.name === 'menu' ? 'close' : 'menu'
-      navLinks.classList.toggle('top-[12vw]')
+      navLinks.classList.toggle('top-[9vw]')
     }
   </script>
 
@@ -86,7 +86,7 @@
 
           <div class="flex flex-col md:w-4/12 w-full justify-start  ">
             <div
-              class="font-druk-trial tracking-wide md:text-[5vw] text-6xl font-normal md:leading-20 leanding-3 
+              class="font-druk-trial tracking-wide md:text-[5vw] text-5xl font-normal md:leading-20 leanding-3 
               flex flex-col md:justify-start justify-center md:items-start items-center p-0 m-0 md:text-left text-center">
               <p>WELCOME<br />TO THE MOST<br />MUSICAL<br />PLACE IN SF.</p>
             </div>
@@ -97,7 +97,7 @@
           </div>
 
           <div class="md:w-4/12 w-full flex md:items-start items-center md:justify-start justify-center">
-            <div class="md:w-[23vw] w-[50%] ">
+            <div class="md:w-[23vw] w-[35%] ">
               <img src="../assets/Logo.png" alt="logo">
             </div>
           </div>
