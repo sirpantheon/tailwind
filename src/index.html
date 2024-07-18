@@ -15,52 +15,54 @@
 
   <!-- menu -->
 
-  <nav class="bg-primary min-w-full md:h-[13vh] h-[9vh] items-center flex justify-between fixed top-0 z-50 px-2">
+  <nav class="bg-primary min-w-full md:h-[14vh] h-[9vh] items-center flex justify-between fixed top-0 z-50 px-2">
     <div>
-      <img src="../assets/Logo.png" class="md:w-[10vw] md:h-[8vw] xl:w-20 xl:h-20 h-14 w-14 lg:mr-3 " alt="logo" />
+      <img src="../assets/Logo.png" class="md:w-[8vw] md:h-[8vw] xl:w-20 xl:h-20 h-14 w-14 lg:mr-3 " alt="logo" />
     </div>
     <div
       class="md:w-[75vw] w-full flex nav-links md:static absolute items-center left-0 top-[-1000%] justify-center bg-primary 
       duration-500 transition-all ease-in ">
       <ul
         class="flex items-center justify-between md:flex-row flex-col gap-[2vw] md:gap-[0vw] md:min-w-full 
-        md:border-l-2 border-l-0  md:h-8 md:h-10 md:pl-2 md:pl-16 bg-primary h-full">
-        <li class="bg-primary p-5">
+        md:border-l-2 border-l-0  md:h-8 md:h-10 md:pl-2 md:pl-16 bg-primary h-full flex-nowrap text-nowrap">
+        <li class="p-5">
           <a href="#" class="text-white hover:text-gray-300 duration-500 text-xs">Hotel & Hostel</a>
         </li>
-        <li class="bg-primary p-5">
+        <li class="p-5">
           <a href="#" class="text-white hover:text-gray-300 duration-500 text-xs">Rehearsal</a>
         </li>
-        <li class="bg-primary p-5">
+        <li class="p-5">
           <a href="#" class="text-white hover:text-gray-300 duration-500 text-xs">Venue</a>
         </li>
-        <li class="bg-primary p-5">
+        <li class="p-5">
           <a href="#" class="text-white hover:text-gray-300 duration-500 text-xs">Hall of Fame</a>
         </li>
-        <li class="bg-primary p-5">
+        <li class="p-5">
           <a href="#" class="text-white hover:text-gray-300 duration-500 text-xs">Entertainment</a>
         </li>
-        <li class="bg-primary p-5">
+        <li class="p-5">
           <a href="#" class="text-white hover:text-gray-300 duration-500 text-xs">Restaurant</a>
         </li>
-        <li class="bg-primary p-5">
+        <li class="p-5">
           <a href="#" class="text-white hover:text-gray-300 duration-500 text-xs">Media</a>
         </li>
       </ul>
     </div>
-    <div class="w-[40%] md:w-[20%]   ">
-      <ul class="flex w-full justify-around items-center lg:w-[20vw] ">
+    <div class="w-[40%] md:w-[20%] min-[320px]:w-full   ">
+      <ul class="flex w-full justify-around items-center lg:w-[20vw]  ">
         <li>
           <ion-icon onclick="onToggleMenu(this)" name="menu" class="text-white text-3xl md:hidden "></ion-icon>
         </li>
         <li>
           <button
-            class="bg-white text-primary duration-500 pl-3 pr-3 pt-1 pb-1 border-2 hover:bg-primary hover:text-white transition font-druk-xcond md:text-xl xl:text-3xl lg:text-xl text-xl tracking-widest ">GET
+            class="bg-white text-primary duration-500 pl-3 pr-3 pt-1 pb-1 border-2 hover:bg-primary hover:text-white transition 
+            font-druk-trial font-normal md:text-xl lg:text-xl text-xl tracking-widest ">GET
             TICKETS</button>
         </li>
         <li>
           <button
-            class="bg-white text-primary duration-500 pl-3 pr-3 pt-1 pb-1 border-2 hover:bg-primary hover:text-white transition font-druk-xcond md:text-xl xl:text-3xl text-2xl tracking-widest ">BOOK
+            class="bg-white text-primary duration-500 pl-3 pr-3 pt-1 pb-1 border-2 hover:bg-primary hover:text-white transition 
+            font-druk-trial font-normal md:text-xl lg:text-xl text-xl tracking-widest ">BOOK
             NOW</button>
         </li>
       </ul>
@@ -82,7 +84,7 @@
     <div class=" relative flex items-center justify-center w-full">
       <div class="relative flex z-30 justify-center items-center text-white w-full ">
 
-        <div class=" flex md:justify-between w-4/5 md:pt-32 sm:flex-col md:flex-row ">
+        <div class=" flex md:justify-between w-4/5 md:pt-32 sm:flex-col md:flex-row min-[320px]:flex-col ">
 
           <div class="flex flex-col md:w-4/12 w-full justify-start  ">
             <div
@@ -134,7 +136,7 @@
     
 
     <div class=" md:w-[50vw] w-full text-white items-center justify-center bg-primary flex flex-col 
-    md:absolute  right-0 h-[80vh] sm:h-[80vh]">
+    md:absolute  right-0 h-[80vh] sm:h-[80vh] min-[320px]:p-6">
       <div class=" md:h-1/3 flex flex-col justify-between leading-[3vh]">
         <span class="text-2xl font-bold">Rehearsal Studios /</span>
         <span class="text-7xl font-druk-trial font-normal">TAKE YOUR REHEARSAL
@@ -145,9 +147,9 @@
           </p>
         </div>
       </div>
-      <div class="flex items-end justify-end w-4/6 mt-28 ">
+      <div class="flex items-end justify-end md:w-4/6 mt-28 min-[320px]:w-full ">
         <button
-          class="w-36 flex font-druk-trial font-normal p-2 text-2xl border-2 justify-center items-center 
+          class="md:w-36 flex min-[320px]:w-full font-druk-trial font-normal p-2 text-2xl border-2 justify-center items-center 
           hover:text-primary hover:bg-white hover:border-primary transition duration-500 ">SEE ALL STUDIOS</button>
       </div>
     </div>
@@ -195,10 +197,10 @@
 
           </div>
         </div>
-        <div class="flex w-full justify-end items-end mt-4 ">
+        <div class="flex w-full justify-end items-end mt-4 min-[320px]:w-full ">
           <button
-            class="w-36 flex font-druk-trial font-normal p-2 text-2xl border-2 justify-center items-center 
-            hover:text-primary hover:border-primary transition duration-500 ">OUR
+            class="md:w-36 flex font-druk-trial font-normal p-2 text-2xl border-2 justify-center items-center 
+            hover:text-primary hover:border-primary transition duration-500 min-[320px]:w-full ">OUR
             ROOMS</button>
         </div>
       </div>
@@ -277,22 +279,22 @@
 
   <!-- hall of fame -->
   <section class="flex bg-primary h-[80vh] min-w-full justify-center text-white ">
-    <div class=" w-[80vw] h-full py-16 relative flex z-30 justify-center items-center ">
+    <div class=" w-[80vw] h-full py-16 relative flex min-[320px]:flex-col min-[320px]:justify-between z-30 justify-center items-center ">
 
-      <div class=" w-1/3 flex flex-col h-4/5 text-2xl  ">
+      <div class=" md:w-1/3 flex flex-col md:h-4/5 text-2xl min-[320px]:w-full  ">
         <span>Experience the bay
           <br />area music's legacy/
         </span>
       </div>
       <div
-        class=" w-1/3 h-4/5 flex justify-center items-center text-7xl font-druk-text-trial font-normal 
-        tracking-normal	">
+        class=" md:w-1/3 md:h-4/5 flex justify-center items-center text-7xl font-druk-text-trial font-normal 
+        tracking-normal min-[320px]:w-full min-[320px]:text-5xl	">
         <span>HALL OF FAME</span>
       </div>
-      <div class=" w-1/3 h-4/5 flex justify-end items-end">
+      <div class=" md:w-1/3 md:h-4/5 flex justify-end items-end min-[320px]:w-full">
         <button
           class=" text-white duration-500 py-2 px-9 border-2 hover:bg-white hover:text-primary 
-          hover:border-primary  transition font-druk-xcond md:text-xl xl:text-3xl text-3xl tracking-widest ">LEARN
+          hover:border-primary  transition font-druk-xcond md:text-xl xl:text-3xl text-3xl tracking-widest min-[320px]:w-full ">LEARN
           MORE</button>
       </div>
 
@@ -311,13 +313,13 @@
 
     <div class="md:absolute w-[80vw] md:h-[80vh] h-[90vh] justify-center items-center md:pt-[17vh]">
       <div>
-        <div class="flex flex-col text-white justify-center items-start w-[80%] md:h-[90%] h-[45vh] ">
-          <div class="flex flex-col items-start justify-center w-full md:w-[38vw]">
+        <div class="flex flex-col text-white justify-center items-start w-[80%] md:h-[90%] h-[45vh] min-[320px]:w-full ">
+          <div class="flex flex-col items-start justify-center w-full md:w-[38vw] ">
             <div
               class="flex flex-col font-druk-trial tracking-wide text-[5vw] font-normal md:leading-[9vh] 
-              leading-[5vh] justify-start p-0 m-0">
+              leading-[5vh] justify-start p-0 m-0 min-[320px]:w-full">
               <span class="text-4xl font-bold md:mb-5">About /</span>
-              <span>WE KEEP THE <br /> CANDLE BURNING</span>
+              <span class="min-[320px]:w-full text-4xl">WE KEEP THE <br /> CANDLE BURNING</span>
             </div>
 
             <div class="leading-[3vh]">
@@ -330,10 +332,10 @@
               </div>
 
             </div>
-            <div class="flex w-full justify-end items-end my-3 ">
+            <div class="flex w-full justify-end items-end md:my-5 min-[320px]:m-0 ">
               <button
-                class="w-36 flex font-druk-trial font-normal p-2 text-2xl border-2 justify-center items-center 
-                hover:text-primary hover:border-primary transition duration-500 ">LEARN MORE
+                class="md:w-36 flex font-druk-trial font-normal p-2 text-2xl border-2 justify-center items-center 
+                hover:text-primary hover:border-primary transition duration-500 min-[320px]:w-full ">LEARN MORE
               </button>
             </div>
           </div>
@@ -380,8 +382,8 @@
           })();</script><a href="https://1map.com/pt/map-embed">1 Map</a>
       </div>
     </div>
-    <div class="md:w-[50%] md:h-[80%] w-full h-[50%] flex items-center  ">
-      <div class="md:w-[40%] w-[50%]">
+    <div class="md:w-[40%] md:h-full w-full h-[50%] flex items-center  ">
+      <div class="md:w-full w-[50%]">
         <img src="../assets/FIND.png" class="rotate-[270deg] object-cover">
       </div>
       <div class="h-[50%] w-full flex ">
@@ -423,20 +425,19 @@
   <!-- subscribe -->
 
   <section class="bg-secondary min-w-full h-[50vh] flex justify-center items-center">
-    <div class="w-[80%] flex md:flex-row flex-col justify-between items-center">
+    <div class="w-[80%] flex md:flex-row flex-col justify-between items-center ">
       <div
-        class="md:w-[50vw] md:h-[25vh] w-full md:justify-end justify-center items-center flex flex-col 
-        font-druk-trial tracking-wide md:text-[4vw] 
-        text-white font-normal md:leading-[8vh] leading-[4vh] mb-4 md:mb-0 text-6xl">
-        <h2 class="text-4xl font-bold mb-5">Subscribe /</h2>
-        <p class="text-7xl font-druk-trial font-normal">BE THE FIRST TO KNOW UPCOMING <br> EVENTS, DISCOUNTS, AND UPDATES.</p>
+        class="md:w-[50vw] md:h-[25vh] w-full md:justify-end justify-center items-center flex flex-col min-[320px]:justify-between min-[320px]:h-full
+        font-druk-trial tracking-wide md:text-[4vw] text-white font-normal md:leading-[8vh] leading-[4vh] mb-4 md:mb-0 text-6xl min-[320px]:w-full">
+        <h2 class="text-4xl font-bold mb-5 min-[320px]:text-2xl">Subscribe /</h2>
+        <p class="md:text-5xl font-druk-trial font-normal min-[320px]:text-3xl">BE THE FIRST TO KNOW UPCOMING <br> EVENTS, DISCOUNTS, AND UPDATES.</p>
       </div>
-      <div class="md:w-[40vw] md:h-[25vh] w-full flex  items-end">
-        <button class="font-druk-wide-trial w-full font-medium text-xl py-0 px-3 border-2 
-          border-white text-white justify-between flex items-center hover:border-primary 
+      <div class="md:w-[40vw] md:h-[25vh] w-full flex items-end min-[320px]:w-full">
+        <button class="font-druk-wide-trial w-full font-medium text-xl py-0 px-3 border-2 min-[320px]:text-sm
+          border-white text-white justify-between flex items-center hover:border-primary min-[320px]:w-full
           hover:text-primary transition duration-500">
           <p>Enter your email address to subscribe_</p>
-          <ion-icon name="arrow-forward" class="text-5xl"></ion-icon>
+          <ion-icon name="arrow-forward" class="text-5xl min-[320px]:text-3xl"></ion-icon>
         </button>
 
       </div>
