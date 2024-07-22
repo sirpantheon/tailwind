@@ -140,8 +140,8 @@
 
   <section class="min-w-full bg-primary md:h-[80vh] min-[320px]:h-[50vh] z-40 flex ">
 
-    <div class="object-cover h-[80vh] v-[50vw] md:flex items-center justify-center hidden ">
-      <div class="absolute w-full h-[80vh] z-50">
+    <div class="object-cover h-[80vh] min-[320px]:h-[50vh] v-[50vw] md:flex items-center justify-center hidden ">
+      <div class="absolute w-full h-[80vh] min-[320px]:h-[50vh] z-50">
         <img src="../assets/filtro.png" class="relative w-full h-full top-0 left-0 z-10 object-cover ">
       </div>
       <video src="../assets/videos/Reharsal 16x9.mp4" alt="rehearsal studios" muted loop autoplay
@@ -181,22 +181,22 @@
     }
   </style>
 
-  <section class="flex flex-col md:flex-row bg-secondary min-w-full h-[90vh] items-center justify-center">
-    <div class="absolute w-full h-full">
+  <section class="flex flex-col md:flex-row bg-secondary min-w-full md:h-[90vh] min-[320px]:h-[50vh] min-[320px]:m-0 min-[320px]:p-0 items-center justify-center">
+    <div class="absolute md:w-full md:h-full min-[320px]:h-[50vh] ">
       <img src="../assets/Site_BG_RED.png" class="relative w-full h-full top-0 left-0 z-10 object-cover ">
     </div>
     <div class="flex flex-col text-white justify-center items-start w-[80%] h-[90%] z-20 ">
       <div class="flex flex-col items-start justify-start md:w-[35%] w-full w">
         <div class="flex flex-col font-druk-trial tracking-wide text-[5vw] font-normal w-full leading-[4vh] 
-        justify-start p-0 m-0 sm:items-center md:items-start">
-          <span class="text-4xl font-bold mb-5">Hotel /</span>
-          <span class="text-7xl font-druk-trial font-normal sm:text-center md:text-left">THE ONLY
+        justify-start p-0 m-0 sm:items-center md:items-start min-[320px]:justify-center min-[320px]:items-center min-[320px]:text-center">
+          <span class="text-4xl font-bold md:mb-5">Hotel /</span>
+          <span class="text-7xl font-druk-trial font-normal sm:text-center md:text-left min-[320px]:text-7xl ">THE ONLY
             <br />HOTEL THAT
             <br />ROCKS
           </span>
         </div>
 
-        <div class="leading-[3vh] sm:w-full sm:items-center md:items-start">
+        <div class="leading-[3vh] min-[320px]:leading-3 sm:w-full sm:items-center md:items-start">
           <div class="flex flex-col font-medium mt-5 sm:text-center md:text-left">
             <p>We're the only music-themed hotel & hostel
               <br />in San Francisco built directly into Music City
@@ -307,7 +307,7 @@
       </div>
       <div class=" md:w-[15vw] md:h-4/5 flex justify-end items-end min-[320px]:w-full">
         <button class=" text-white duration-500 py-2 px-9 border-2 hover:bg-white hover:text-primary font-druk-trial font-normal 
-          hover:border-primary transition md:text-2xl text-3xl tracking-widest min-[320px]:w-full "><a
+          hover:border-primary transition md:text-2xl text-3xl tracking-widest min-[320px]:w-full text-nowrap "><a
             href="https://musiccitysf.com/hall-of-fame/">LEARN
             MORE</a></button>
       </div>
@@ -335,13 +335,13 @@
             <div class="flex flex-col font-druk-trial tracking-wide text-[5vw] font-normal md:leading-[9vh] 
               leading-[5vh] justify-start p-0 m-0 min-[320px]:w-full sm:items-center md:items-start">
               <span class="text-4xl font-druk-trial font-normal md:mb-5">About/</span>
-              <span class="min-[320px]:w-full md:text-6xl sm:text-center md:text-left">WE KEEP THE <br /> CANDLE
+              <span class="min-[320px]:w-full min-[320px]:text-6xl md:text-6xl sm:text-center md:text-left">WE KEEP THE <br /> CANDLE
                 BURNING</span>
             </div>
 
-            <div class="leading-[3vh]">
+            <div class="leading-[3vh] w-full">
               <div
-                class="flex flex-col text-[2vh] min-[320px]:text-wrap min-[320px]:text-xl  md:text-[90%] md:leading-5 font-medium my-3 sm:text-center md:text-left text-nowrap">
+                class="flex flex-col text-[2vh] min-[320px]:text-wrap md:nowrap min-[320px]:text-sm  md:text-[90%] md:leading-5 font-medium my-3 sm:text-center md:text-left text-nowrap">
                 <p>Music City San Francisco is the a music HUB that San Francisco
                   <br />has been waiting for. Founded by musician Rudy colombini, MCSF
                   <br />is designed with the community in mind, built to to keep the
