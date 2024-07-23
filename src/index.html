@@ -8,6 +8,8 @@
   <link href="./output.css" rel="stylesheet">
   <link href="https://fonts.cdnfonts.com/css/druk-trial" rel="stylesheet">
   <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+  <link rel="icon" href="../assets/favicon_io/favicon-32x32.png" type="image/x-icon">
+  <title>MCSF - Music City San Francisco</title>
 </head>
 
 <body
@@ -109,6 +111,16 @@
       e.name = e.name === 'menu' ? 'close' : 'menu'
       navLinks.classList.toggle('top-[9vw]')
     }
+
+    // dropdown booknow
+    document.addEventListener('DOMContentLoaded', function() {
+        const button = document.getElementById('menu-button');
+        const menu = document.querySelector('.dropdown-menu');
+
+        button.addEventListener('click', function() {
+            menu.classList.toggle('hidden');
+        });
+    });
   </script>
 
   <!-- menu -->
