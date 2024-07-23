@@ -18,6 +18,12 @@
   <nav
     class="bg-primary min-w-full md:h-[90px] h-[9vh] items-center flex justify-between fixed top-0 z-50 px-2 min-h-[80px]">
 
+    <style>
+      .dropdown:hover .dropdown-menu {
+        display: block;
+      }
+    </style>
+
     <div>
       <img src="../assets/MCSF-Redish-logo.png" class="md:w-[8vw] md:h-[8vw] xl:w-20 xl:h-20 h-14 w-14 lg:mr-3 "
         alt="logo" />
@@ -68,10 +74,31 @@
               TICKETS</a></button>
         </li>
         <li>
-          <button class="bg-white text-primary duration-500 pl-3 pr-3 pt-1 pb-1 border-2 hover:bg-primary hover:text-white transition 
-            font-druk-trial font-normal md:text-xl lg:text-xl text-xl tracking-widest "><a
-              href="https://musiccitysf.com/rehearsal/studios/">BOOK
-              NOW</a></button>
+          <div class="relative inline-block text-left dropdown">
+            <button
+              class="inline-flex justify-center w-full bg-white text-primary duration-500 pl-3 pr-3 pt-1 pb-1 border-2 hover:bg-primary hover:text-white transition 
+              font-druk-trial font-normal md:text-xl lg:text-xl text-xl tracking-widest    focus:outline-none focus:ring-2 focus:ring-offset-2 focus:bg-primary"
+              id="menu-button" aria-expanded="true" aria-haspopup="true">
+              BOOK NOW
+              <svg class="-mr-1 ml-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                aria-hidden="true">
+                <path fill-rule="evenodd"
+                  d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 011.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                  clip-rule="evenodd" />
+              </svg>
+            </button>
+
+            <div
+              class="dropdown-menu origin-top-right absolute right-0 mt-2 w-[300px] shadow-lg bg-white ring-1 ring-black ring-opacity-5 divide-y divide-gray-100 focus:outline-none hidden"
+              role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
+              <div class="py-1" role="none">
+                <a href="https://musiccitysf.com/hotel/#rooms" class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 text-nowrap" role="menuitem"
+                  tabindex="-1" id="menu-item-0">BOOK A HOTEL ROOM</a>
+                <a href="https://musiccitysf.com/rehearsal/studios/" class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 text-nowrap" role="menuitem"
+                  tabindex="-1" id="menu-item-1">BOOK A REHEARSAL STUDIO</a>
+              </div>
+            </div>
+          </div>
         </li>
       </ul>
     </div>
@@ -181,13 +208,15 @@
     }
   </style>
 
-  <section class="flex flex-col md:flex-row bg-secondary min-w-full md:h-[90vh] min-[320px]:h-[50vh] min-[320px]:m-0 min-[320px]:p-0 items-center justify-center">
+  <section
+    class="flex flex-col md:flex-row bg-secondary min-w-full md:h-[90vh] min-[320px]:h-[50vh] min-[320px]:m-0 min-[320px]:p-0 items-center justify-center">
     <div class="absolute md:w-full md:h-full min-[320px]:h-[50vh] ">
       <img src="../assets/Site_BG_RED.png" class="relative w-full h-full top-0 left-0 z-10 object-cover ">
     </div>
     <div class="flex flex-col text-white justify-center items-start w-[80%] h-[90%] z-20 ">
       <div class="flex flex-col items-start justify-start md:w-[35%] w-full w">
-        <div class="flex flex-col font-druk-trial tracking-wide text-[5vw] font-normal w-full leading-[4vh] 
+        <div
+          class="flex flex-col font-druk-trial tracking-wide text-[5vw] font-normal w-full leading-[4vh] 
         justify-start p-0 m-0 sm:items-center md:items-start min-[320px]:justify-center min-[320px]:items-center min-[320px]:text-center">
           <span class="text-4xl font-bold md:mb-5">Hotel /</span>
           <span class="text-7xl font-druk-trial font-normal sm:text-center md:text-left min-[320px]:text-7xl ">THE ONLY
@@ -335,7 +364,8 @@
             <div class="flex flex-col font-druk-trial tracking-wide text-[5vw] font-normal md:leading-[9vh] 
               leading-[5vh] justify-start p-0 m-0 min-[320px]:w-full sm:items-center md:items-start">
               <span class="text-4xl font-druk-trial font-normal md:mb-5">About/</span>
-              <span class="min-[320px]:w-full min-[320px]:text-6xl md:text-6xl sm:text-center md:text-left">WE KEEP THE <br /> CANDLE
+              <span class="min-[320px]:w-full min-[320px]:text-6xl md:text-6xl sm:text-center md:text-left">WE KEEP THE
+                <br /> CANDLE
                 BURNING</span>
             </div>
 
@@ -478,30 +508,34 @@
       <div class=" md:w-[40vw] md:h-[27vh] h-[20vh] mt-8 flex justify-between items-center flex-col">
 
         <ul class="flex justify-between w-full ">
-          <li class="border-b-2 transition duration-500 hover:opacity-70 cursor-pointer"><a href="https://musiccitysf.com/about-us/history/">Our History</a></li>
-          <li class="border-b-2 transition duration-500 hover:opacity-70 cursor-pointer"><a href="https://musiccitysf.com/about-us/contact-us/">Contact US</a></li>
-          <li class="border-b-2 transition duration-500 hover:opacity-70 cursor-pointer"><a href="https://musiccitysf.com/about-us/media/">Media</a></li>
-          <li class="border-b-2 transition duration-500 hover:opacity-70 cursor-pointer"><a href="https://musiccitysf.com/about-us/faq/">FAQ</a></li>
+          <li class="border-b-2 transition duration-500 hover:opacity-70 cursor-pointer"><a
+              href="https://musiccitysf.com/about-us/history/">Our History</a></li>
+          <li class="border-b-2 transition duration-500 hover:opacity-70 cursor-pointer"><a
+              href="https://musiccitysf.com/about-us/contact-us/">Contact US</a></li>
+          <li class="border-b-2 transition duration-500 hover:opacity-70 cursor-pointer"><a
+              href="https://musiccitysf.com/about-us/media/">Media</a></li>
+          <li class="border-b-2 transition duration-500 hover:opacity-70 cursor-pointer"><a
+              href="https://musiccitysf.com/about-us/faq/">FAQ</a></li>
         </ul>
         <div class="flex justify-between w-full leading-5 items-center ">
           <p>Privacy Policy<br /> Terms and Conditions<br /> Accessibility</p>
           <div class="flex justify-center items-center">
 
             <a href="https://www.facebook.com/MusicCitySF/">
-            <svg class="w-[5vw] flex justify-center items-center" viewBox=" 0 0 48 48" version="1.1"
-              xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-              <title>Facebook</title>
-              <g id="Icon/Social/facebook-black" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                <path
-                  d="M30.0793333,40 L30.0793333,27.608 L34.239,27.608 L34.8616667,22.7783333 L30.0793333,22.7783333 L30.0793333,19.695 C30.0793333,18.2966667 30.4676667,17.344 32.4726667,17.344 L35.0303333,17.3426667 L35.0303333,13.0233333 C34.5876667,12.9646667 33.0696667,12.833 31.3036667,12.833 C27.6163333,12.833 25.0923333,15.0836667 25.0923333,19.2166667 L25.0923333,22.7783333 L20.922,22.7783333 L20.922,27.608 L25.0923333,27.608 L25.0923333,40 L30.0793333,40 Z M9.766,40 C8.79033333,40 8,39.209 8,38.234 L8,9.766 C8,8.79033333 8.79033333,8 9.766,8 L38.2336667,8 C39.209,8 40,8.79033333 40,9.766 L40,38.234 C40,39.209 39.209,40 38.2336667,40 L9.766,40 Z"
-                  id="Shape" fill="#FFF"></path>
-              </g>
-            </svg>
-          </a>
+              <svg class="w-[5vw] flex justify-center items-center" viewBox=" 0 0 48 48" version="1.1"
+                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <title>Facebook</title>
+                <g id="Icon/Social/facebook-black" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                  <path
+                    d="M30.0793333,40 L30.0793333,27.608 L34.239,27.608 L34.8616667,22.7783333 L30.0793333,22.7783333 L30.0793333,19.695 C30.0793333,18.2966667 30.4676667,17.344 32.4726667,17.344 L35.0303333,17.3426667 L35.0303333,13.0233333 C34.5876667,12.9646667 33.0696667,12.833 31.3036667,12.833 C27.6163333,12.833 25.0923333,15.0836667 25.0923333,19.2166667 L25.0923333,22.7783333 L20.922,22.7783333 L20.922,27.608 L25.0923333,27.608 L25.0923333,40 L30.0793333,40 Z M9.766,40 C8.79033333,40 8,39.209 8,38.234 L8,9.766 C8,8.79033333 8.79033333,8 9.766,8 L38.2336667,8 C39.209,8 40,8.79033333 40,9.766 L40,38.234 C40,39.209 39.209,40 38.2336667,40 L9.766,40 Z"
+                    id="Shape" fill="#FFF"></path>
+                </g>
+              </svg>
+            </a>
 
-          <a href="https://www.instagram.com/musiccitysanfrancisco/">
-            <svg class="w-[5vw]" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg"
-              xmlns:xlink="http://www.w3.org/1999/xlink">
+            <a href="https://www.instagram.com/musiccitysanfrancisco/">
+              <svg class="w-[5vw]" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>Instagram</title>
                 <g id="Icon/Social/instagram-black" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                   <path
@@ -512,8 +546,8 @@
             </a>
 
             <a href="https://www.tiktok.com/@musiccitysf">
-            <svg class="w-[5vw]" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg"
-              xmlns:xlink="http://www.w3.org/1999/xlink">
+              <svg class="w-[5vw]" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>Tiktok</title>
                 <g id="Icon/Social/tiktok-black" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                   <path
