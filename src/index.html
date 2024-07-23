@@ -94,9 +94,11 @@
               class="dropdown-menu origin-top-right absolute right-0 mt-2 w-[300px] shadow-lg bg-white ring-1 ring-black ring-opacity-5 divide-y divide-gray-100 focus:outline-none hidden"
               role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
               <div class="py-1" role="none">
-                <a href="https://musiccitysf.com/hotel/#rooms" class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 text-nowrap" role="menuitem"
+                <a href="https://musiccitysf.com/hotel/#rooms"
+                  class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 text-nowrap" role="menuitem"
                   tabindex="-1" id="menu-item-0">BOOK A HOTEL ROOM</a>
-                <a href="https://musiccitysf.com/rehearsal/studios/" class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 text-nowrap" role="menuitem"
+                <a href="https://musiccitysf.com/rehearsal/studios/"
+                  class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 text-nowrap" role="menuitem"
                   tabindex="-1" id="menu-item-1">BOOK A REHEARSAL STUDIO</a>
               </div>
             </div>
@@ -113,13 +115,13 @@
     }
 
     // dropdown booknow
-    document.addEventListener('DOMContentLoaded', function() {
-        const button = document.getElementById('menu-button');
-        const menu = document.querySelector('.dropdown-menu');
+    document.addEventListener('DOMContentLoaded', function () {
+      const button = document.getElementById('menu-button');
+      const menu = document.querySelector('.dropdown-menu');
 
-        button.addEventListener('click', function() {
-            menu.classList.toggle('hidden');
-        });
+      button.addEventListener('click', function () {
+        menu.classList.toggle('hidden');
+      });
     });
   </script>
 
@@ -497,13 +499,21 @@
           BE THE FIRST TO KNOW UPCOMING <br>
           EVENTS, DISCOUNTS, AND UPDATES.</p>
       </div>
-      <div class="md:w-[40vw] md:h-[25vh] w-full flex items-end min-[320px]:w-full">
-        <button class="font-druk-wide-trial w-full font-semibold text-[100%] xl:text-[100%] xl:py-2 py-0 px-3 border-2 min-[320px]:text-sm
+      <div
+        class="md:w-[40vw] md:h-[25vh] w-full flex items-end justify-items-end justify-end min-[320px]:w-full ">
+        <div class="h-[50px] flex w-full justify-center items-center border-2 p-2 ">
+          <input placeholder="Enter your email address to subscribe_" class="bg-secondary w-full font-druk-wide-trial font-semibold text-[100%] xl:text-[100%] xl:py-2 py-0 px-3 min-[320px]:text-sm
+           text-white justify-between flex items-center min-[320px]:w-full placeholder:text-white
+          hover:text-primary transition duration-500 text-nowrap focus:text-white border-transparent focus:outline-none hover:border-transparent">
+          <button><ion-icon name="arrow-forward"
+              class="text-5xl min-[320px]:text-3xl xl:text-4xl text-white"></ion-icon></button>
+        </div>
+        <!-- <button class="font-druk-wide-trial w-full font-semibold text-[100%] xl:text-[100%] xl:py-2 py-0 px-3 border-2 min-[320px]:text-sm
           border-white text-white justify-between flex items-center hover:border-primary min-[320px]:w-full
           hover:text-primary transition duration-500 text-nowrap">
           <p><a href="#"></a>Enter your email address to subscribe_</p>
           <ion-icon name="arrow-forward" class="text-5xl min-[320px]:text-3xl xl:text-4xl"></ion-icon>
-        </button>
+        </button> -->
 
       </div>
     </div>
