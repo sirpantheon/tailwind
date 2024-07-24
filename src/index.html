@@ -22,15 +22,234 @@
     class="bg-primary min-w-full md:h-[90px] h-[9vh] items-center flex justify-between fixed top-0 z-50 px-2 min-h-[80px]">
 
     <style>
-      .dropdown:hover .dropdown-menu {
+      .dropdown:hover .dropdown-book {
         display: block;
+        transition: opacity 0.3s ease, transform 0.3s ease;
+
+      }
+      
+      .dropdown-menu {
+        opacity: 0;
+        transform: translateY(-10px);
+        transition: opacity 0.3s ease, transform 0.3s ease;
+      }
+
+      .dropdown-menu.show {
+        display: block;
+        transition: opacity 0.3s ease, transform 0.3s ease;
+        opacity: 1;
+        transform: translateY(0);
       }
     </style>
 
     <div>
-      <img src="../assets/MCSF-Redish-logo.png" class="md:w-[8vw] md:h-[8vw] xl:w-20 xl:h-20 h-14 w-14 lg:mr-3 "
-        alt="logo" />
+      <!-- dropdown -->
+      <div class="relative inline-block text-left dropdown">
+        <button
+          class="inline-flex justify-center w-full border-none  text-primary duration-500 pl-3 pr-3 pt-1 pb-1 border-2  transition 
+            font-druk-trial font-normal md:text-xl lg:text-xl text-xl tracking-widest    focus:outline-none focus:ring-2 focus:ring-offset-2 focus:bg-primary"
+          id="dropdown-button" aria-expanded="true" aria-haspopup="true">
+
+          <img src="../assets/MCSF-Redish-logo.png" class="md:w-[8vw] md:h-[8vw] xl:w-20 xl:h-20 h-14 w-14 lg:mr-3 "
+            alt="logo" />
+
+          <svg class="-mr-1 ml-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+            aria-hidden="true">
+            <path fill-rule="evenodd"
+              d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 011.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+              clip-rule="evenodd" />
+          </svg>
+        </button>
+
+        <div id="dropdown-menu"
+          class="dropdown-menu origin-top-right absolute left-0 mt-2 mb-2 shadow-lg bg-primary ring-1 w-[100vw] h-[100vh] ring-black ring-opacity-5 divide-y divide-gray-100 focus:outline-none hidden"
+          role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
+          <div class="w-full flex justify-center items-center">
+            <div class="w-[20vw] justify-start">
+              <div class="flex justify-center items-start flex-col w-full h-[50vh] ">
+
+                <div class="flex justify-center items-center flex-col ">
+
+                  <img src="../assets/MCSF-Redish-logo.png" class="md:w-[8vw] m-10" alt="logo" />
+
+                  <div class="flex justify-center items-center">
+
+                    <a href="https://www.facebook.com/MusicCitySF/">
+                      <svg class="w-[3vw] flex justify-center items-center" viewBox=" 0 0 48 48" version="1.1"
+                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <title>Facebook</title>
+                        <g id="Icon/Social/facebook-black" stroke="none" stroke-width="1" fill="none"
+                          fill-rule="evenodd">
+                          <path
+                            d="M30.0793333,40 L30.0793333,27.608 L34.239,27.608 L34.8616667,22.7783333 L30.0793333,22.7783333 L30.0793333,19.695 C30.0793333,18.2966667 30.4676667,17.344 32.4726667,17.344 L35.0303333,17.3426667 L35.0303333,13.0233333 C34.5876667,12.9646667 33.0696667,12.833 31.3036667,12.833 C27.6163333,12.833 25.0923333,15.0836667 25.0923333,19.2166667 L25.0923333,22.7783333 L20.922,22.7783333 L20.922,27.608 L25.0923333,27.608 L25.0923333,40 L30.0793333,40 Z M9.766,40 C8.79033333,40 8,39.209 8,38.234 L8,9.766 C8,8.79033333 8.79033333,8 9.766,8 L38.2336667,8 C39.209,8 40,8.79033333 40,9.766 L40,38.234 C40,39.209 39.209,40 38.2336667,40 L9.766,40 Z"
+                            id="Shape" fill="#FFF"></path>
+                        </g>
+                      </svg>
+                    </a>
+
+                    <a href="https://www.instagram.com/musiccitysanfrancisco/">
+                      <svg class="w-[3vw]" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <title>Instagram</title>
+                        <g id="Icon/Social/instagram-black" stroke="none" stroke-width="1" fill="none"
+                          fill-rule="evenodd">
+                          <path
+                            d="M25.6440564,8.00125481 C28.524689,8.00651102 29.1340343,8.02966857 30.5968,8.09632 C32.29984,8.17376 33.46272,8.44448 34.48064,8.84 C35.5328,9.24896 36.42496,9.79584 37.31456,10.68544 C38.20416,11.57504 38.75136,12.4672 39.16,13.51936 C39.55552,14.53728 39.82592,15.70016 39.90368,17.4032 C39.9747749,18.9634834 39.9963833,19.5527641 39.9995653,22.9632797 L39.9995653,25.0367203 C39.9963833,28.4472359 39.9747749,29.0365166 39.90368,30.5968 C39.82592,32.29984 39.55552,33.46272 39.16,34.48064 C38.75136,35.5328 38.20416,36.42496 37.31456,37.31456 C36.42496,38.20416 35.5328,38.75104 34.48064,39.16 C33.46272,39.55552 32.29984,39.82624 30.5968,39.90368 C29.0365166,39.9747749 28.4472359,39.9963833 25.0367203,39.9995653 L22.9632797,39.9995653 C19.5527641,39.9963833 18.9634834,39.9747749 17.4032,39.90368 C15.70016,39.82624 14.53728,39.55552 13.51936,39.16 C12.4672,38.75104 11.57504,38.20416 10.68544,37.31456 C9.79584,36.42496 9.24864,35.5328 8.84,34.48064 C8.44448,33.46272 8.17408,32.29984 8.09632,30.5968 C8.02966857,29.1340343 8.00651102,28.524689 8.00125481,25.6440564 L8.00125481,22.3559436 C8.00651102,19.475311 8.02966857,18.8659657 8.09632,17.4032 C8.17408,15.70016 8.44448,14.53728 8.84,13.51936 C9.24864,12.4672 9.79584,11.57504 10.68544,10.68544 C11.57504,9.79584 12.4672,9.24896 13.51936,8.84 C14.53728,8.44448 15.70016,8.17376 17.4032,8.09632 C18.8659657,8.02966857 19.475311,8.00651102 22.3559436,8.00125481 Z M25.0186977,10.8832675 L22.9813023,10.8832675 C19.6322732,10.8861221 19.0771566,10.9057829 17.53472,10.976 C15.97472,11.04736 15.12736,11.30784 14.56384,11.52704 C13.81696,11.81728 13.28384,12.16416 12.72416,12.72384 C12.16416,13.28384 11.81728,13.81696 11.52704,14.56352 C11.30816,15.12736 11.04704,15.97472 10.97632,17.53472 C10.9058103,19.0771566 10.8861244,19.6322732 10.8832677,22.9813023 L10.8832677,25.0186977 C10.8861244,28.3677268 10.9058103,28.9228434 10.97632,30.46528 C11.04704,32.02528 11.30816,32.87264 11.52704,33.43648 C11.81728,34.18304 12.16416,34.71616 12.72416,35.27616 C13.28384,35.83584 13.81696,36.18272 14.56384,36.47296 C15.12736,36.69216 15.97472,36.95264 17.53472,37.024 C19.076864,37.0942171 19.6319556,37.1138779 22.9812271,37.1167325 L25.0187729,37.1167325 C28.3680444,37.1138779 28.923136,37.0942171 30.46528,37.024 C32.02528,36.95264 32.87264,36.69216 33.43616,36.47296 C34.18304,36.18272 34.71616,35.83584 35.27584,35.27616 C35.83584,34.71616 36.18272,34.18304 36.47296,33.43648 C36.69184,32.87264 36.95296,32.02528 37.02368,30.46528 C37.0941897,28.9228434 37.1138756,28.3677268 37.1167323,25.0186977 L37.1167323,22.9813023 C37.1138756,19.6322732 37.0941897,19.0771566 37.02368,17.53472 C36.95296,15.97472 36.69184,15.12736 36.47296,14.56352 C36.18272,13.81696 35.83584,13.28384 35.27584,12.72384 C34.71616,12.16416 34.18304,11.81728 33.43616,11.52704 C32.87264,11.30784 32.02528,11.04736 30.46528,10.976 C28.9228434,10.9057829 28.3677268,10.8861221 25.0186977,10.8832675 Z M24,15.78384 C28.53792,15.78384 32.21632,19.46224 32.21632,23.99984 C32.21632,28.53776 28.53792,32.21616 24,32.21616 C19.46208,32.21616 15.78368,28.53776 15.78368,23.99984 C15.78368,19.46224 19.46208,15.78384 24,15.78384 Z M24,18.66672 C21.0544,18.66672 18.66656,21.05456 18.66656,23.99984 C18.66656,26.94544 21.0544,29.33328 24,29.33328 C26.9456,29.33328 29.33344,26.94544 29.33344,23.99984 C29.33344,21.05456 26.9456,18.66672 24,18.66672 Z M32.540928,13.539232 C33.601088,13.539232 34.460928,14.398752 34.460928,15.459232 C34.460928,16.519392 33.601088,17.379232 32.540928,17.379232 C31.480448,17.379232 30.620928,16.519392 30.620928,15.459232 C30.620928,14.398752 31.480448,13.539232 32.540928,13.539232 Z"
+                            id="Shape" fill="#FFF"></path>
+                        </g>
+                      </svg>
+                    </a>
+
+                    <a href="https://www.tiktok.com/@musiccitysf">
+                      <svg class="w-[3vw]" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <title>Tiktok</title>
+                        <g id="Icon/Social/tiktok-black" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                          <path
+                            d="M38.0766847,15.8542954 C36.0693906,15.7935177 34.2504839,14.8341149 32.8791434,13.5466056 C32.1316475,12.8317108 31.540171,11.9694126 31.1415066,11.0151329 C30.7426093,10.0603874 30.5453728,9.03391952 30.5619062,8 L24.9731521,8 L24.9731521,28.8295196 C24.9731521,32.3434487 22.8773693,34.4182737 20.2765028,34.4182737 C19.6505623,34.4320127 19.0283477,34.3209362 18.4461858,34.0908659 C17.8640239,33.8612612 17.3337909,33.5175528 16.8862248,33.0797671 C16.4386588,32.6422142 16.0833071,32.1196657 15.8404292,31.5426268 C15.5977841,30.9658208 15.4727358,30.3459348 15.4727358,29.7202272 C15.4727358,29.0940539 15.5977841,28.4746337 15.8404292,27.8978277 C16.0833071,27.3207888 16.4386588,26.7980074 16.8862248,26.3604545 C17.3337909,25.9229017 17.8640239,25.5791933 18.4461858,25.3491229 C19.0283477,25.1192854 19.6505623,25.0084418 20.2765028,25.0219479 C20.7939283,25.0263724 21.3069293,25.1167239 21.794781,25.2902081 L21.794781,19.5985278 C21.2957518,19.4900128 20.7869423,19.436221 20.2765028,19.4380839 C18.2431278,19.4392483 16.2560928,20.0426009 14.5659604,21.1729264 C12.875828,22.303019 11.5587449,23.9090873 10.7814424,25.7878401 C10.003907,27.666593 9.80084889,29.7339663 10.1981162,31.7275214 C10.5953834,33.7217752 11.5748126,35.5530237 13.0129853,36.9904978 C14.4509252,38.4277391 16.2828722,39.4064696 18.277126,39.8028054 C20.2711469,40.1991413 22.3382874,39.9951517 24.2163416,39.2169177 C26.0948616,38.4384508 27.7002312,37.1209021 28.8296253,35.4300711 C29.9592522,33.7397058 30.5619062,31.7522051 30.5619062,29.7188301 L30.5619062,18.8324027 C32.7275484,20.3418321 35.3149087,21.0404263 38.0766847,21.0867664 L38.0766847,15.8542954 Z"
+                            id="Fill-1" fill="#FFF"></path>
+                        </g>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="py-1 text-white justify-center items-center w-full  m-9" role="none">
+                <ul>
+                  <li class="text-2xl hover:text-gray-400"><a href="https://musiccitysf.com/about-us/">ABOUT US</a></li>
+                  <li class="font-normal text-xl mt-2 hover:text-gray-400"><a
+                      href="https://musiccitysf.com/about-us/history/">Our History</a></li>
+                  <li class="font-normal text-xl mt-2 hover:text-gray-400"><a
+                      href="https://musiccitysf.com/about-us/contact-us/">Contact Us</a></li>
+                  <li class="font-normal text-xl mt-2 hover:text-gray-400"><a
+                      href="https://musiccitysf.com/about-us/media/">Media</a></li>
+                  <li class="font-normal text-xl mt-2 hover:text-gray-400"><a
+                      href="https://musiccitysf.com/about-us/faq/">FAQ</a></li>
+                  <li
+                    class="font-normal text-xl mt-5 hover:text-gray-400 uppercase bg-white text-primary w-[10vw] p-2 text-center">
+                    <a href="https://musiccitysf.com/about-us/contact-us/">Contact
+                      Us</a></li>
+                </ul>
+              </div>
+
+            </div>
+            <div class="w-full h-full flex flex-wrap ">
+
+              <div class="py-1 text-white justify-center items-center w-[20%] m-9 " role="none">
+                <ul class="flex flex-col justify-between h-[30vh]">
+                  <div>
+                    <li class="text-2xl hover:text-gray-400"><a href="https://musiccitysf.com/hotel/">HOTEL & HOSTEL</a>
+                    </li>
+                    <li class="font-normal text-xl mt-2 hover:text-gray-400"><a
+                        href="https://musiccitysf.com/hotel#rooms">Our Rooms</a></li>
+                    <li class="font-normal text-xl mt-2 hover:text-gray-400"><a
+                        href="https://musiccitysf.com/hotel/explore/">Explore San Francisco</a></li>
+                    <li class="font-normal text-xl mt-2 hover:text-gray-400"><a
+                        href="https://musiccitysf.com/about-us/contact-us/">Contac Us</a></li>
+                  </div>
+
+                  <li
+                    class="font-normal text-xl mt-5 uppercase bg-white text-primary w-[10vw] p-2 text-center hover:text-gray-400">
+                    <a href="https://musiccitysf.com/hotel#rooms">BOOK NOW</a></li>
+                </ul>
+              </div>
+
+              <div class="py-1 text-white justify-center items-center w-[20%] m-9" role="none">
+                <ul class="flex flex-col justify-between h-[30vh]">
+
+                  <div>
+                    <li class="text-2xl hover:text-gray-400"><a href="https://musiccitysf.com/rehearsal/">REHEARSAL</a>
+                    </li>
+                    <li class="font-normal text-xl mt-2 hover:text-gray-400"><a
+                        href="https://musiccitysf.com/rehearsal/studios/">Our Studios</a></li>
+                    <li class="font-normal text-xl mt-2 hover:text-gray-400"><a
+                        href="https://musiccitysf.com/rehearsal/sessions/">MCSF Sessions</a></li>
+                  </div>
+
+                  <li class="font-normal text-xl mt-5 uppercase bg-white text-primary w-[10vw] p-2 text-center"><a
+                      href="https://musiccitysf.com/rehearsal/studios">RESERVE NOW</a></li>
+                </ul>
+              </div>
+
+              <div class="py-1 text-white justify-center items-center w-[20%] m-9" role="none">
+                <ul class="flex flex-col justify-between h-[30vh]">
+                  <div>
+                    <li class="text-2xl hover:text-gray-400"><a href="https://musiccitysf.com/mcsf-venue/">VENUE</a>
+                    </li>
+                    <li class="font-normal text-xl mt-2 hover:text-gray-400"><a
+                        href="https://musiccitysf.com/mcsf-venue/upcoming-events/">Upcoming Events</a></li>
+                    <li class="font-normal text-xl mt-2 hover:text-gray-400"><a
+                        href="https://musiccitysf.com/mcsf-venue/past-events/">Past Events</a></li>
+                  </div>
+
+                  <li class="font-normal text-xl mt-5 uppercase bg-white text-primary w-[10vw] p-2 text-center"><a
+                      href="https://musiccitysf.com/mcsf-venue/upcoming-events">GET TICKET</a>S</li>
+                </ul>
+              </div>
+
+              <div class="py-1 text-white justify-center items-center w-[20%] m-9" role="none">
+                <ul class="flex flex-col justify-between h-[30vh]">
+
+                  <div>
+                    <li class="text-2xl hover:text-gray-400"><a href="https://musiccitysf.com/hall-of-fame/">HALL OS
+                        FAME</a></li>
+                    <li class="font-normal text-xl mt-2 hover:text-gray-400"><a
+                        href="https://musiccitysf.com/hall-of-fame/#gallery">Hall of Fame</a></li>
+                    <li class="font-normal text-xl mt-2 hover:text-gray-400"><a
+                        href="https://musiccitysf.com/hall-of-fame/#wall">Brick Wall</a></li>
+                  </div>
+
+                  <li class="font-normal text-xl mt-5 uppercase bg-white text-primary w-[10vw] p-2 text-center"><a
+                      href="https://www.eventbrite.com/e/san-francisco-music-hall-of-fame-gallery-tickets-511127354677">RESERVE
+                      NOW</a></li>
+                </ul>
+              </div>
+
+              <div class="py-1 text-white justify-center items-center w-[20%] m-9 h-[40vh]" role="none">
+                <ul class="flex flex-col justify-between h-[30vh]">
+                  <div>
+                    <li class="text-2xl hover:text-gray-400"><a
+                        href="https://musiccitysf.com/entertainment/">ENTERTAINMENT</a></li>
+                    <li class="font-normal text-xl mt-2 hover:text-gray-400"><a
+                        href="https://musiccitysf.com/entertainment/#events">Community Events</a></li>
+                    <li class="font-normal text-xl mt-2 hover:text-gray-400"><a
+                        href="https://musiccitysf.com/entertainment/#submit">artist Submissions</a></li>
+
+                  </div>
+                  <li class="font-normal text-xl mt-5 uppercase bg-white text-primary w-[10vw] p-2 text-center"><a
+                      href="https://musiccitysf.com/entertainment/#events">GET TICKETS</a></li>
+                </ul>
+              </div>
+
+              <div class="py-1 text-white justify-center items-center w-[20%] m-9" role="none">
+                <ul>
+                  <li class="text-2xl hover:text-gray-400"><a href="https://musiccitysf.org/restaurant/">RESTAURANT</a>
+                  </li>
+                  <li class="font-normal text-xl mt-2 hover:text-gray-400"><a>Coming Soon</a></li>
+
+                </ul>
+              </div>
+
+              <div class="py-1 text-white justify-center items-center w-[20%] m-9" role="none">
+                <ul>
+                  <li class="text-2xl hover:text-gray-400"><a href="https://musiccitysf.org/education/">EDUCATION</a>
+                  </li>
+                  <li class="font-normal text-xl mt-2 hover:text-gray-400"><a>Coming Soon</a></li>
+                </ul>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- dropdown -->
+
     </div>
+
     <div class="md:w-[75vw] w-full flex nav-links md:static absolute items-center left-0 top-[-1000%] justify-center bg-primary 
       duration-500 transition-all ease-in ">
       <ul class="flex items-center justify-between md:flex-row flex-col gap-[2vw] md:gap-[0vw] md:min-w-full 
@@ -92,7 +311,7 @@
             </button>
 
             <div
-              class="dropdown-menu origin-top-right absolute right-0 mt-2 w-[300px] shadow-lg bg-white ring-1 ring-black ring-opacity-5 divide-y divide-gray-100 focus:outline-none hidden"
+              class="dropdown-book origin-top-right absolute right-0 mt-2 w-[300px] shadow-lg bg-white ring-1 ring-black ring-opacity-5 divide-y divide-gray-100 focus:outline-none hidden"
               role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
               <div class="py-1" role="none">
                 <a href="https://musiccitysf.com/hotel/#rooms"
@@ -123,6 +342,11 @@
       button.addEventListener('click', function () {
         menu.classList.toggle('hidden');
       });
+    });
+
+    document.getElementById('dropdown-button').addEventListener('click', function () {
+      var dropdownMenu = document.getElementById('dropdown-menu');
+      dropdownMenu.classList.toggle('show');
     });
   </script>
 
@@ -251,16 +475,16 @@
           </span>
         </div>
 
-        <div class="leading-[3vh] min-[320px]:leading-3 sm:w-full sm:items-center md:items-start">
+        <div class=" min-[320px]:leading-3 sm:w-full sm:items-center md:items-start">
           <div class="flex flex-col font-medium mt-5 sm:text-center md:text-left">
-            <p>We're the only music-themed hotel & hostel
+            <p class="leading-5">We're the only music-themed hotel & hostel
               <br />in San Francisco built directly into Music City
               <br />San Francisco!
             </p>
           </div>
 
           <div class="flex flex-col font-medium mt-3 sm:text-center md:text-left">
-            <p>Travel and make new friends by staying in our
+            <p class="leading-5">Travel and make new friends by staying in our
               <br />hostel rooms, jam with the SF local talent in
               <br />the rehearsal studios or karaoke rooms, and
               <br />experience live music like no hotel has ever
