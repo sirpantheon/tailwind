@@ -11,6 +11,25 @@
   <link rel="icon" href="../assets/favicon_io/favicon-32x32.png" type="image/x-icon">
   <!-- <link rel="stylesheet" id="sbi_styles-css" href="https://musiccitysf.com/wp-content/plugins/instagram-feed-pro/css/sbi-styles.min.css?ver=6.4" type="text/css" media="all"> -->
   <title>MCSF - Music City San Francisco</title>
+  <style>
+    .dropdown:hover .dropdown-book {
+      display: block;
+      transition: opacity 1s ease, transform 0.3s ease;
+    }
+
+    .dropdown-menu .dropdown-menu-mega {
+      opacity: 0;
+      transform: translateY(-10px);
+      transition: opacity 1s ease, transform 0.3s ease;
+    }
+
+    .dropdown-menu.show .dropdown-menu-mega.show {
+      display: block;
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity 1s ease, transform 0.3s ease;
+    }
+  </style>
 </head>
 
 <body
@@ -19,62 +38,68 @@
   <!-- menu -->
 
   <nav
-    class="bg-primary min-w-full md:h-[90px] h-[9vh] items-center flex justify-between fixed top-0 z-50 px-2 min-h-[80px]">
+    class="bg-primary min-w-full h-[100px] items-center lg:gap-2 min-[768px]:gap-0 flex md:justify-start min-[100px]:justify-between sm:justify-between fixed top-0 z-50 min-[100px]:p-0 min-[245px]:px-2">
 
-    <style>
-      .dropdown:hover .dropdown-book {
-        display: block;
-        transition: opacity 0.3s ease, transform 0.3s ease;
 
-      }
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        // Menu mobile
+        const navLinks = document.querySelector('.nav-links');
+        const menuButton = document.querySelector('ion-icon[name="menu"]');
+        if (menuButton && navLinks) {
+          menuButton.addEventListener('click', function () {
+            navLinks.classList.toggle('top-[90px]');
+          });
+        }
 
-      .dropdown-menu {
-        opacity: 0;
-        transform: translateY(-10px);
-        transition: opacity 0.3s ease, transform 0.3s ease;
-      }
+        // Dropdown booknow
+        const button = document.getElementById('menu-button');
+        const menu = document.querySelector('.dropdown-menu');
+        if (button && menu) {
+          button.addEventListener('click', function () {
+            menu.classList.toggle('hidden');
+          });
+        }
 
-      .dropdown-menu.show {
-        display: block;
-        transition: opacity 0.3s ease, transform 0.3s ease;
-        opacity: 1;
-        transform: translateY(0);
-      }
-    </style>
+        // Dropdown mega
+        const buttonMega = document.getElementById('menu-button-mega');
+        const menuMega = document.querySelector('.dropdown-menu-mega');
+        if (buttonMega && menuMega) {
+          buttonMega.addEventListener('click', function () {
+            menuMega.classList.toggle('hidden');
+          });
+        }
+      });
+    </script>
 
     <div>
       <!-- dropdown -->
-      <div class="relative inline-block text-left dropdown min-[100px]:hidden sm:flex">
+
+      <div class="relative inline-block text-left dropdown md:w-[8vw] min-[768px]:w-[6vw] justify-center items-center">
         <button
-          class="inline-flex justify-center w-full border-none  text-primary duration-500 pl-3 pr-3 pt-1 pb-1 border-2  transition 
-            font-druk-trial font-normal md:text-xl lg:text-xl text-xl tracking-widest    focus:outline-none focus:ring-2 focus:ring-offset-2 focus:bg-primary"
-          id="dropdown-button" aria-expanded="true" aria-haspopup="true">
+          class="sm:inline-flex focus:border-none min-[100px]:hidden items-center justify-center focus:ring-0 w-full border-none  text-primary transition duration-500 ease-in border-2  font-druk-trial font-normal md:text-xl lg:text-xl text-xl tracking-widest focus:outline-none focus:ring-offset-0 focus:bg-primary"
+          id="menu-button-mega" aria-expanded="true" aria-haspopup="true">
 
-          <img src="../assets/MCSF-Redish-logo.png" class="md:w-[8vw] min-[100px]:w-[8vw] xl:w-20 lg:mr-3 "
-            alt="logo" />
+          <img src="https://musiccitysf.com/wp-content/themes/bootscore-main/assets/MCSF-Redish-logo.png"
+            class="md:w-[8vw] min-[100px]:w-[8vw] xl:w-20 min-[768px]:w-[5vw] " alt="logo">
 
-          <svg class="-mr-1 ml-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
-            aria-hidden="true">
-            <path fill-rule="evenodd"
-              d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 011.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-              clip-rule="evenodd" />
-          </svg>
         </button>
 
-        <div id="dropdown-menu"
-          class="dropdown-menu sm:hidden md:block origin-top-right absolute left-0 mt-2 mb-2 shadow-lg bg-primary ring-1 w-[100vw] h-[100vh] ring-black ring-opacity-5 divide-y divide-gray-100 focus:outline-none hidden"
-          role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
-          <div class="w-full flex justify-center items-center">
-            <div class="w-[20vw] justify-start">
-              <div class="flex justify-center items-start flex-col w-full h-[50vh] ">
+        <div
+          class="dropdown-menu-mega origin-top-right absolute left-0 shadow-lg font-druk-text-trial transition duration-500 ease-in bg-primary ring-1 w-[100vw] h-[80vh] ring-black ring-opacity-5 divide-y divide-gray-100 focus:outline-none hidden"
+          role="menu" aria-orientation="vertical" aria-labelledby="menu-button-mega" tabindex="-1">
+          <div class="w-full flex justify-start items-start">
+            <div class="w-[20vw] flex flex-col justify-start h-[80vh]">
+              <div class="flex justify-center flex-col w-full h-[45%] items-center ">
 
                 <div class="flex justify-center items-center flex-col ">
 
                   <img src="../assets/MCSF-Redish-logo.png" class="md:w-[8vw] m-10" alt="logo" />
 
-                  <div class="flex justify-center items-center">
+                  <div class="flex justify-center items-center gap-1">
 
-                    <a href="https://www.facebook.com/MusicCitySF/">
+                    <a href="https://www.facebook.com/MusicCitySF/"
+                      class=" border-2 border-primary hover:opacity-75 duration-500 transition rounded-full ">
                       <svg class="w-[3vw] flex justify-center items-center" viewBox=" 0 0 48 48" version="1.1"
                         xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                         <title>Facebook</title>
@@ -87,7 +112,8 @@
                       </svg>
                     </a>
 
-                    <a href="https://www.instagram.com/musiccitysanfrancisco/">
+                    <a href="https://www.instagram.com/musiccitysanfrancisco/"
+                      class=" border-2 border-primary hover:opacity-75 duration-500 transition rounded-full ">
                       <svg class="w-[3vw]" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg"
                         xmlns:xlink="http://www.w3.org/1999/xlink">
                         <title>Instagram</title>
@@ -100,7 +126,8 @@
                       </svg>
                     </a>
 
-                    <a href="https://www.tiktok.com/@musiccitysf">
+                    <a href="https://www.tiktok.com/@musiccitysf"
+                      class=" border-2 border-primary hover:opacity-75 duration-500 transition rounded-full ">
                       <svg class="w-[3vw]" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg"
                         xmlns:xlink="http://www.w3.org/1999/xlink">
                         <title>Tiktok</title>
@@ -116,19 +143,20 @@
 
               </div>
 
-              <div class="py-1 text-white justify-center items-center w-full  m-9" role="none">
-                <ul>
-                  <li class="text-2xl hover:text-gray-400"><a href="https://musiccitysf.com/about-us/">ABOUT US</a></li>
-                  <li class="font-normal text-xl mt-2 hover:text-gray-400"><a
+              <div class="text-white justify-center items-center w-full mt-16 ml-16" role="none">
+                <ul class="flex flex-col justify-between h-[30vh]">
+                  <li class="text-2xl hover:text-gray-400"><a href="https://musiccitysf.com/about-us/">ABOUT
+                      US</a></li>
+                  <li class="font-normal text-xl  hover:text-gray-400"><a
                       href="https://musiccitysf.com/about-us/history/">Our History</a></li>
-                  <li class="font-normal text-xl mt-2 hover:text-gray-400"><a
+                  <li class="font-normal text-xl  hover:text-gray-400"><a
                       href="https://musiccitysf.com/about-us/contact-us/">Contact Us</a></li>
-                  <li class="font-normal text-xl mt-2 hover:text-gray-400"><a
+                  <li class="font-normal text-xl  hover:text-gray-400"><a
                       href="https://musiccitysf.com/about-us/media/">Media</a></li>
-                  <li class="font-normal text-xl mt-2 hover:text-gray-400"><a
+                  <li class="font-normal text-xl  hover:text-gray-400"><a
                       href="https://musiccitysf.com/about-us/faq/">FAQ</a></li>
                   <li
-                    class="mt-5 uppercase text-2xl font-druk-trial font-normal border-2 bg-white hover:bg-primary text-primary hover:text-white hover:border-2 transition duration-500 w-[10vw] p-2 text-center">
+                    class="font-normal text-xl mt-5 uppercase cursor-pointer bg-white text-primary w-[10vw] hover:bg-primary hover:text-white p-2 text-center border-2 duration-500 transition ">
                     <a href="https://musiccitysf.com/about-us/contact-us/">Contact
                       Us</a>
                   </li>
@@ -141,18 +169,19 @@
               <div class="py-1 text-white justify-center items-center w-[20%] m-9 " role="none">
                 <ul class="flex flex-col justify-between h-[30vh]">
                   <div>
-                    <li class="text-2xl hover:text-gray-400"><a href="https://musiccitysf.com/hotel/">HOTEL & HOSTEL</a>
-                    </li>
+                    <li class="text-2xl hover:text-gray-400"><a href="https://musiccitysf.com/hotel/">HOTEL &
+                        HOSTEL</a></li>
                     <li class="font-normal text-xl mt-2 hover:text-gray-400"><a
                         href="https://musiccitysf.com/hotel#rooms">Our Rooms</a></li>
                     <li class="font-normal text-xl mt-2 hover:text-gray-400"><a
-                        href="https://musiccitysf.com/hotel/explore/">Explore San Francisco</a></li>
+                        href="https://musiccitysf.com/hotel/explore/">Explore San Francisco</a>
+                    </li>
                     <li class="font-normal text-xl mt-2 hover:text-gray-400"><a
                         href="https://musiccitysf.com/about-us/contact-us/">Contac Us</a></li>
                   </div>
 
                   <li
-                    class="font-normal text-[1vw] mt-5 uppercase font-druk-trial border-2 bg-white hover:bg-primary text-primary hover:text-white hover:border-2 transition duration-500 w-[10vw] p-2 text-center ">
+                    class="font-normal text-xl mt-5 uppercase cursor-pointer bg-white text-primary w-[10vw] hover:bg-primary hover:text-white p-2 text-center border-2 duration-500 transition ">
                     <a href="https://musiccitysf.com/hotel#rooms">BOOK NOW</a>
                   </li>
                 </ul>
@@ -167,11 +196,12 @@
                     <li class="font-normal text-xl mt-2 hover:text-gray-400"><a
                         href="https://musiccitysf.com/rehearsal/studios/">Our Studios</a></li>
                     <li class="font-normal text-xl mt-2 hover:text-gray-400"><a
-                        href="https://musiccitysf.com/rehearsal/sessions/">MCSF Sessions</a></li>
+                        href="https://musiccitysf.com/rehearsal/sessions/">MCSF Sessions</a>
+                    </li>
                   </div>
 
                   <li
-                    class="font-normal text-2xl mt-5 uppercase font-druk-trial border-2 bg-white hover:bg-primary text-primary hover:text-white hover:border-2 transition duration-500 w-[10vw] p-2 text-center">
+                    class="font-normal text-xl mt-5 cursor-pointer uppercase bg-white text-primary w-[10vw] hover:bg-primary hover:text-white p-2 text-center border-2 duration-500 transition ">
                     <a href="https://musiccitysf.com/rehearsal/studios">RESERVE NOW</a>
                   </li>
                 </ul>
@@ -183,13 +213,15 @@
                     <li class="text-2xl hover:text-gray-400"><a href="https://musiccitysf.com/mcsf-venue/">VENUE</a>
                     </li>
                     <li class="font-normal text-xl mt-2 hover:text-gray-400"><a
-                        href="https://musiccitysf.com/mcsf-venue/upcoming-events/">Upcoming Events</a></li>
+                        href="https://musiccitysf.com/mcsf-venue/upcoming-events/">Upcoming
+                        Events</a></li>
                     <li class="font-normal text-xl mt-2 hover:text-gray-400"><a
-                        href="https://musiccitysf.com/mcsf-venue/past-events/">Past Events</a></li>
+                        href="https://musiccitysf.com/mcsf-venue/past-events/">Past Events</a>
+                    </li>
                   </div>
 
                   <li
-                    class="font-normal text-2xl mt-5 uppercase font-druk-trial border-2 bg-white hover:bg-primary text-primary hover:text-white hover:border-2 transition duration-500 w-[10vw] p-2 text-center">
+                    class="font-normal text-xl mt-5 uppercase cursor-pointer bg-white text-primary w-[10vw] hover:bg-primary hover:text-white p-2 text-center border-2 duration-500 transition ">
                     <a href="https://musiccitysf.com/mcsf-venue/upcoming-events">GET TICKET</a>S
                   </li>
                 </ul>
@@ -202,13 +234,14 @@
                     <li class="text-2xl hover:text-gray-400"><a href="https://musiccitysf.com/hall-of-fame/">HALL OS
                         FAME</a></li>
                     <li class="font-normal text-xl mt-2 hover:text-gray-400"><a
-                        href="https://musiccitysf.com/hall-of-fame/#gallery">Hall of Fame</a></li>
+                        href="https://musiccitysf.com/hall-of-fame/#gallery">Hall of Fame</a>
+                    </li>
                     <li class="font-normal text-xl mt-2 hover:text-gray-400"><a
                         href="https://musiccitysf.com/hall-of-fame/#wall">Brick Wall</a></li>
                   </div>
 
                   <li
-                    class="font-normal text-2xl mt-5 uppercase font-druk-trial border-2 bg-white hover:bg-primary text-primary hover:text-white hover:border-2 transition duration-500 w-[10vw] p-2 text-center">
+                    class="font-normal text-xl mt-5 uppercase cursor-pointer bg-white text-primary w-[10vw] hover:bg-primary hover:text-white p-2 text-center border-2 duration-500 transition ">
                     <a
                       href="https://www.eventbrite.com/e/san-francisco-music-hall-of-fame-gallery-tickets-511127354677">RESERVE
                       NOW</a>
@@ -222,14 +255,18 @@
                     <li class="text-2xl hover:text-gray-400"><a
                         href="https://musiccitysf.com/entertainment/">ENTERTAINMENT</a></li>
                     <li class="font-normal text-xl mt-2 hover:text-gray-400"><a
-                        href="https://musiccitysf.com/entertainment/#events">Community Events</a></li>
+                        href="https://musiccitysf.com/entertainment/#events">Community
+                        Events</a>
+                    </li>
                     <li class="font-normal text-xl mt-2 hover:text-gray-400"><a
-                        href="https://musiccitysf.com/entertainment/#submit">artist Submissions</a></li>
+                        href="https://musiccitysf.com/entertainment/#submit">artist
+                        Submissions</a>
+                    </li>
 
                   </div>
                   <li
-                    class="font-normal text-2xl mt-5 uppercase font-druk-trial border-2 bg-white hover:bg-primary text-primary hover:text-white hover:border-2 transition duration-500 w-[10vw] p-2 text-center">
-                    <a href=":https://www.eventbrite.com/o/music-city-entertainment-36940515103">GET TICKETS</a>
+                    class="font-normal text-xl mt-5 uppercase cursor-pointer bg-white text-primary w-[10vw] hover:bg-primary hover:text-white p-2 text-center border-2 duration-500 transition ">
+                    <a href="https://musiccitysf.com/entertainment/#events">GET TICKETS</a>
                   </li>
                 </ul>
               </div>
@@ -256,75 +293,77 @@
         </div>
 
       </div>
-
-      <!-- dropdown -->
+    </div>
+    <!-- dropdown -->
 
     </div>
 
-    <div class="md:w-[75vw] w-full flex nav-links md:static absolute items-center left-0 top-[-1000%] justify-center bg-primary 
-      duration-500 transition-all ease-in z-50 ">
-      <ul class="flex items-center justify-between md:flex-row flex-col gap-[2vw] md:gap-[0vw] md:min-w-[70vw] 
-        md:border-l-2 border-l-0  md:h-8 md:h-10 md:pl-2 md:pl-16 bg-primary h-full flex-nowrap text-nowrap">
-        <li class="p-5">
-          <a href="https://musiccitysf.com/hotel/" class="text-white hover:text-gray-300 duration-500 sm:text-[1vw] min-[100px]:text-xl  ">Hotel
-            &
+    <div class=" grow w-full flex nav-links md:static min-[100px]:h-[50vh] min-[100px]:pb-4 md:p md:h-full absolute items-center left-0 top-[-1000%] justify-center bg-primary 
+              duration-500 transition-all ease-in z-50 ">
+      <ul
+        class="flex items-center justify-between min-[100px]:w-full sm:w-full md:flex-row flex-col md:gap-[0vw] md:min-w-full
+                md:border-l-2 border-l-0  md:h-10  md:pl-[5px] bg-primary  min-[100px]:h-full flex-nowrap text-nowrap font-druk-text-trial">
+        <li class="p-[2px]">
+          <a href="https://musiccitysf.com/hotel/"
+            class="text-white hover:text-gray-300 duration-500 sm:text-[12px] lg:text-[15px] bg-primary h-full w-full ">Hotel
+            &amp;
             Hostel</a>
         </li>
-        <li class="p-5">
+        <li class="p-[2px]">
           <a href="https://musiccitysf.com/rehearsal/"
-            class="text-white hover:text-gray-300 duration-500 sm:text-[1vw]">Rehearsal</a>
+            class="text-white hover:text-gray-300 duration-500 min-[100px]:text-[12px] lg:text-[15px] bg-primary h-full w-full">Rehearsal</a>
         </li>
-        <li class="p-5">
+        <li class="p-[2px]">
           <a href="https://musiccitysf.com/mcsf-venue/"
-            class="text-white hover:text-gray-300 duration-500 sm:text-[1vw]">Venue</a>
+            class="text-white hover:text-gray-300 duration-500 min-[100px]:text-[12px] lg:text-[15px] bg-primary h-full w-full">Venue</a>
         </li>
-        <li class="p-5">
+        <li class="p-[2px]">
           <a href="https://musiccitysf.com/hall-of-fame/"
-            class="text-white hover:text-gray-300 duration-500 sm:text-[1vw]">Hall of Fame</a>
+            class="text-white hover:text-gray-300 duration-500 min-[100px]:text-[12px] lg:text-[15px] bg-primary h-full w-full">Hall of Fame</a>
         </li>
-        <li class="p-5">
+        <li class="p-[2px]">
           <a href="https://musiccitysf.com/entertainment/"
-            class="text-white hover:text-gray-300 duration-500 sm:text-[1vw]">Entertainment</a>
+            class="text-white hover:text-gray-300 duration-500 min-[100px]:text-[12px] lg:text-[15px] bg-primary h-full w-full">Entertainment</a>
         </li>
-        <li class="p-5">
+        <li class="p-[2px]">
           <a href="https://www.musiccitysf.org/restaurant"
-            class="text-white hover:text-gray-300 duration-500 sm:text-[1vw]">Restaurant</a>
+            class="text-white hover:text-gray-300 duration-500 min-[100px]:text-[12px] lg:text-[15px] bg-primary h-full w-full">Restaurant</a>
         </li>
-        <li class="p-5">
+        <li class="p-[2px]">
           <a href="https://musiccitysf.com/about-us/media/"
-            class="text-white hover:text-gray-300 duration-500 sm:text-[1vw]">Media</a>
+            class="text-white hover:text-gray-300 duration-500 min-[100px]:text-[12px] lg:text-[15px] bg-primary h-full w-full">Media</a>
         </li>
       </ul>
     </div>
-    <div class="w-[40%] md:w-[20%] min-[100px]:w-full sm:w-[50%] md:mr-5    ">
-      <ul class="flex w-full justify-around items-center lg:w-[20vw] md:justify-start md:items-start  ">
+    <div class="md:w-[300px] min-[100px]:w-full sm:w-[50%] flex justify-around ">
+      <ul class="flex w-full justify-around items-center md:justify-start md:items-center min-[768px]:justify-center ">
         <li>
-          <ion-icon onclick="onToggleMenu(this)" name="menu" class="text-white text-3xl sm:hidden "></ion-icon>
+          <ion-icon onclick="onToggleMenu(this)" name="menu"
+            class="text-white min-[100px]:text-xl text-3xl min-[100px]:flex  md:hidden "></ion-icon>
         </li>
         <li>
-          <button
-            class="bg-white text-nowrap text-primary duration-500 pl-3 pr-3 pt-1 pb-1 border-2 hover:bg-primary hover:text-white transition 
-          font-druk-trial font-normal md:text-xl lg:text-xl text-xl tracking-widest mr-5 min-[100px]:text-sm sm:text-2xl"><a
+          <button class="bg-white text-nowrap text-primary min-[768px]:text-xs min-[768px]:mr-1 duration-500 py-1 px-3 border-2 hover:bg-primary hover:text-white transition 
+                  font-druk-trial font-normal lg:text-xl tracking-widest lg:mr-3 min-[100px]:text-[.8rem] sm:text-2xl"><a
               href="https://www.eventbrite.com/o/music-city-san-francisco-12803819712">GET
               TICKETS</a></button>
         </li>
         <li>
           <div class="relative inline-block text-left dropdown">
             <button
-              class="min-[100px]:text-sm sm:text-2xl inline-flex justify-center w-full bg-white text-primary duration-500 py-1 px-3 border-2 hover:bg-primary hover:text-white transition 
-              font-druk-trial font-normal md:text-[1vw] lg:text-xl text-xl tracking-widest text-nowrap focus:outline-none focus:ring-2 focus:ring-offset-2 focus:bg-primary"
+              class="min-[100px]:text-[.8rem] sm:text-2xl min-[768px]:text-xs inline-flex justify-center w-full bg-white text-primary duration-500 py-1 px-3 border-2 hover:bg-primary hover:text-white transition 
+                      font-druk-trial font-normal lg:text-xl tracking-widest text-nowrap focus:outline-none focus:ring-0 focus:ring-offset-0 focus:bg-primary"
               id="menu-button" aria-expanded="true" aria-haspopup="true">
               BOOK NOW
               <svg class="-mr-1 ml-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
                 aria-hidden="true">
                 <path fill-rule="evenodd"
                   d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 011.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                  clip-rule="evenodd" />
+                  clip-rule="evenodd"></path>
               </svg>
             </button>
 
             <div
-              class="dropdown-book origin-top-right absolute right-0 mt-2 w-[300px] shadow-lg bg-white ring-1 ring-black ring-opacity-5 divide-y divide-gray-100 focus:outline-none hidden"
+              class="dropdown-book origin-top-right absolute right-0 w-[300px] shadow-lg bg-white ring-1 ring-black ring-opacity-5 divide-y divide-gray-100 focus:outline-none hidden"
               role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
               <div class="py-1" role="none">
                 <a href="https://musiccitysf.com/hotel/#rooms"
@@ -340,34 +379,13 @@
       </ul>
     </div>
   </nav>
-  <script>
-    const navLinks = document.querySelector('.nav-links')
-    function onToggleMenu(e) {
-      e.name = e.name === 'menu' ? 'close' : 'menu'
-      navLinks.classList.toggle('top-[15vw]')
-    }
 
-    // dropdown booknow
-    document.addEventListener('DOMContentLoaded', function () {
-      const button = document.getElementById('menu-button');
-      const menu = document.querySelector('.dropdown-menu');
-
-      button.addEventListener('click', function () {
-        menu.classList.toggle('hidden');
-      });
-    });
-
-    document.getElementById('dropdown-button').addEventListener('click', function () {
-      var dropdownMenu = document.getElementById('dropdown-menu');
-      dropdownMenu.classList.toggle('show');
-    });
-  </script>
 
   <!-- menu -->
 
   <!-- hero -->
 
-  <section class="hero min-h-[100vh] flex md:h-[100vh] min-[100px]:h-[70vh]  ">
+  <section class="hero flex h-[100vh]  w-full  ">
     <div class=" relative flex items-center justify-center w-full">
       <div class="absolute w-full h-full">
         <img src="../assets/filtro.png" class="relative w-full h-full top-0 left-0 z-10 object-cover ">
@@ -409,172 +427,12 @@
 
 
     <video src="../assets/videos/home.mp4" muted loop autoplay class="absolute z-0 w-auto min-w-full 
-    min-h-full object-cover">
+    h-full object-cover">
     </video>
 
   </section>
 
   <!-- hero -->
-
-  <!-- rehearsal -->
-
-  <section class="min-w-full bg-primary md:h-[80vh] min-[100px]:h-[100vh] z-40 flex min-[100px]:flex-col md:flex-row ">
-
-    <div class="object-cover md:h-[80vh] min-[100px]:h-[50vh] v-[50vw] md:flex items-center justify-center ">
-      <div class="absolute w-full md:h-[80vh] min-[100px]:h-[50vh] z-50">
-        <img src="../assets/filtro.png" class="relative w-full h-full top-0 left-0 z-10 object-cover ">
-      </div>
-      <video src="../assets/videos/Reharsal 16x9.mp4" alt="rehearsal studios" muted loop autoplay
-        class="object-cover h-[80vh] w-full md:absolute z-10">
-      </video>
-    </div>
-
-
-    <div class=" md:w-[50vw] w-full min-[100px]:h-[80vh]  text-white items-center justify-center bg-primary flex flex-col 
-    md:absolute right-0 h-[80vh] sm:h-[80vh] min-[100px]:p-6 ">
-      <div class=" md:h-1/3 flex flex-col justify-between leading-[3vh] sm:items-center md:items-start ">
-        <span
-          class="md:text-2xl font-bold min-[100px]:text-center md:text-left min-[100px]:text-base">Rehearsal
-          Studios /</span>
-        <span
-          class="md:text-7xl sm:text-8xl font-druk-trial p font-normal  min-[100px]:text-center md:text-left min-[100px]:text-xl">TAKE
-          YOUR REHEARSAL
-          <br />TO THE NEXT LEVEL /</span>
-        <div class="leading-[3vh] pt-4 w-full justify-center items-center min-[100px]:text-center flex ">
-          <p
-            class="font-normal sm:text-2xl min-[100px]:text-[.8rem] md:text-left min-[100px]:w-full text-wrap sm:text-nowrap flex sm:w-full sm:text-center md:text-sm min-[100px]:text-center md:text-left">
-            Whether you're a solo project or a
-            band, uor brand-new music
-            <br />rehearsal studios are affordable for all musicians.
-          </p>
-        </div>
-      </div>
-      <div class="flex items-end justify-end md:w-4/6 mt-28 min-[100px]:w-full ">
-        <button class="md:w-36 flex min-[100px]:w-full font-druk-trial font-normal p-2 text-2xl border-2 justify-center items-center 
-          hover:text-primary hover:bg-white hover:border-primary transition duration-500"><a
-            href="https://musiccitysf.com/rehearsal/studios/">SEE ALL STUDIOS</a></button>
-      </div>
-    </div>
-
-  </section>
-
-  <!-- rehearsal -->
-
-  <!-- hotel -->
-  <style>
-    .carousel-item {
-      min-width: calc(100% / 3);
-    }
-  </style>
-
-  <section
-    class="flex flex-col md:flex-row bg-secondary min-w-full md:h-[90vh] min-[100px]:h-[90vh] h-[100vh] min-[100px]:m-0 min-[100px]:p-0 items-center justify-center">
-    <div class="absolute md:w-full md:h-full min-[100px]:h-[90vh] h-[100vh] ">
-      <img src="../assets/Site_BG_RED.png" class="relative w-full h-full top-0 left-0 z-10 object-cover ">
-    </div>
-    <div class="flex flex-col text-white justify-center items-start w-[80%] h-[90%] z-20 ">
-      <div
-        class="flex flex-col md:items-start md:justify-start md:w-[35%] w-full min-[100px]:justify-center min-[100px]:items-center">
-        <div
-          class="flex flex-col font-druk-trial tracking-wide text-[5vw] font-normal w-full leading-[4vh] 
-        justify-start p-0 m-0 sm:items-center md:items-start min-[100px]:justify-center min-[100px]:items-center min-[100px]:text-center">
-          <span class="sm:text-4xl font-bold md:mb-5 min-[100px]:text-2xl">Hotel /</span>
-          <span class="sm:text-7xl font-druk-trial font-normal sm:text-center md:text-left min-[100px]:text-3xl ">THE
-            ONLY
-            <br />HOTEL THAT
-            <br />ROCKS
-          </span>
-        </div>
-
-        <div
-          class=" min-[100px]:leading-3 sm:w-full sm:items-center md:items-start min-[100px]:justify-center min-[100px]:items-center">
-          <div
-            class="flex flex-col font-medium mt-5 sm:text-center md:text-left md:items-start md:justify-start min-[100px]:justify-center min-[100px]:items-center">
-            <p class="leading-5 min-[100px]:text-center md:text-left min-[100px]:text-sm">We're the only music-themed hotel & hostel
-              <br />in San Francisco built directly into Music City
-              <br />San Francisco!
-            </p>
-          </div>
-
-          <div class="flex flex-col font-medium mt-3 sm:text-center md:text-left">
-            <p class="leading-5 min-[100px]:text-center md:text-left min-[100px]:text-sm">Travel and make new friends by staying in our
-              <br />hostel rooms, jam with the SF local talent in
-              <br />the rehearsal studios or karaoke rooms, and
-              <br />experience live music like no hotel has ever
-              <br />done before in our on-site venues!
-            </p>
-
-          </div>
-        </div>
-        <div class="flex w-full justify-end items-end mt-4 min-[100px]:w-full  ">
-          <button class="md:w-36 flex font-druk-trial font-normal p-2 text-2xl border-2  justify-center items-center 
-          hover:text-primary hover:border-primary transition duration-500 min-[100px]:w-full "><a
-              href="https://musiccitysf.com/hotel/#rooms">OUR
-              ROOMS</a></button>
-        </div>
-      </div>
-    </div>
-
-    <div class="md:absolute md:right-0 hidden md:flex z-20 ">
-      <div class="md:relative w-[60vw] max-w-5xl overflow-hidden md:h-[70vh] md:h-[50vh] flex z-50 ">
-        <div id="carousel" class="flex transition-transform duration-300 md:h-full items-end  ">
-          <div class="carousel-item flex-shrink-0 py-2 px-2 w-[35%] h-[60vh] ">
-            <img src="../assets/carousel/carousel-1.jpg" alt="Item 2" class="w-full h-[55vh] object-cover">
-          </div>
-          <div class="carousel-item flex-shrink-0 py-2 px-2 w-[35%] h-[60vh] ">
-            <img src="../assets/carousel/carousel-2.png" alt="Item 3" class="w-full h-[55vh] object-cover">
-          </div>
-          <div class="carousel-item flex-shrink-0 py-2 px-2 w-[35%] h-[60vh] ">
-            <img src="../assets/carousel/carousel-3.png" alt="Item 4" class="w-full h-[55vh] object-cover">
-          </div>
-          <div class="carousel-item flex-shrink-0 py-2 px-2 w-[35%] h-[60vh] ">
-            <img src="../assets/carousel/carousel-4.png" alt="Item 5" class="w-full h-[55vh] object-cover">
-          </div>
-          <div class="carousel-item flex-shrink-0 py-2 px-2 w-[35%] h-[60vh] r">
-            <img src="../assets/carousel/carousel-5.png" alt="Item 6" class="w-full h-[55vh] object-cover">
-          </div>
-          <div class="carousel-item flex-shrink-0 py-2 px-2 w-[35%] h-[60vh] ">
-            <img src="../assets/carousel/carousel-6.png" alt="Item 2" class="w-full h-[55vh] object-cover">
-          </div>
-        </div>
-
-        <button onclick="prevSlide()" class="md:absolute bottom-[-1vh] left-[60%] transform -translate-y-1/2 bg-white text-black px-2 hover:bg-primary hover:text-white transition duration-500
-          rounded-full shadow-md focus:outline-none">
-          &lt;
-        </button>
-        <button onclick="nextSlide()" class="md:absolute bottom-[-1vh] right-[25%] transform -translate-y-1/2 bg-white text-black px-2 hover:bg-primary hover:text-white transition duration-500
-          rounded-full shadow-md focus:outline-none">
-          &gt;
-        </button>
-      </div>
-      <script>
-        let currentSlide = 0;
-        const totalItems = document.querySelectorAll('#carousel .carousel-item').length;
-        const visibleItems = 2; // Quantos itens são visíveis de cada vez
-
-        function updateCarousel() {
-          document.getElementById('carousel').style.transform = `translateX(-${currentSlide * (100 / visibleItems)}%)`;
-        }
-
-        function nextSlide() {
-          currentSlide = (currentSlide + 1) % (totalItems / visibleItems);
-          updateCarousel();
-        }
-
-        function prevSlide() {
-          currentSlide = (currentSlide - 1 + (totalItems / visibleItems)) % (totalItems / visibleItems);
-          updateCarousel();
-        }
-
-        // Initialize carousel
-        updateCarousel();
-      </script>
-
-    </div>
-
-  </section>
-
-  <!-- hotel -->
 
   <!-- venue -->
   <style>
@@ -586,17 +444,19 @@
         flex-wrap: nowrap;
         overflow-y: scroll;
         overflow-x: hidden;
-        flex-direction:row;
+        flex-direction: row;
         font-size: 1rem;
 
       }
-      .eaw-li__wrap{
+
+      .eaw-li__wrap {
         width: 100vw !important;
         font-size: .8rem !important;
         margin-bottom: 3em;
         font-weight: 200 !important;
       }
-      .eaw-title{
+
+      .eaw-title {
         font-size: medium !important;
         font-weight: 200 !important;
       }
@@ -688,7 +548,7 @@
 
     .evb_mcsf time {
       font-family: 'druk trial';
-      
+
     }
 
     #eventbrite {
@@ -740,98 +600,238 @@
     .eaw-time {
       color: white !important;
     }
+    .eaw-li__flex{
+      width: 100%;
+    }
   </style>
   <section
-    class="bg-primary min-w-full h-[100vh] flex justify-center flex-col items-center font-druk-text-trial text-white">
-    <div class="flex flex-col w-[80%] justify-start items-start leading-3">
-      <span class="text-4xl font-druk-trial font-normal md:mb-5 mt-6">Venue/</span>
+    class="bg-primary min-w-full md:h-[160vh] min-[100px]:h-[90vh] flex justify-center flex-col items-center font-druk-text-trial text-white">
+    <div class="flex flex-col w-[80%] md:justify-start md:items-start min-[100px]:justify-items-center leading-3">
+      <span class="text-4xl font-druk-trial font-normal md:mb-5 mt-6 min-[100px]:text-center">Venue/</span>
       <span class="min-[100px]:w-full min-[100px]:text-4xl md:text-4xl sm:text-center md:text-left">UPCOMING
         EVENTS</span>
     </div>
 
     <div class=" w-[80%] h-[70%] mt-3">
       <section class="widget">
-        <section id="evb_mcsf_item" class="wfea eaw-block evb_mcsf ">    <div class="eaw-ulx">
-        <div class="eaw-li__wrap">
-        <div class="eaw-li__flex eaw-clearfix eaw-aligncenter  event__started">
-          <div class="eaw-thumb-wrap" style="min-width:300px">
-                    <span>
-                     <a class="eaw-img eaw-aligncenter" href="https://www.eventbrite.com/e/aggressive-monkshigh-energy-rock-70s-2000s-tickets-885397165757#tickets" rel="bookmark" target="_blank"><img class="eaw-aligncenter eaw-thumb eaw-default-thumb" src="https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F746471339%2F106794499945%2F1%2Foriginal.20240418-060418?h=200&amp;w=450&amp;auto=format%2Ccompress&amp;q=75&amp;sharp=10&amp;s=d4cc1fe1181001bbe8a497e504c18336" alt="Aggressive Monks/High Energy Rock 70’S-2000’S" width="300"></a>                 </span>
-      </div>
-              <div class="eaw-content-wrap">
-          <h3 class="eaw-title">
-      <a href="https://www.eventbrite.com/e/aggressive-monkshigh-energy-rock-70s-2000s-tickets-885397165757#tickets" title="Eventbrite link to Aggressive Monks/High Energy Rock 70’S-2000’S" rel="bookmark" target="_blank">Aggressive Monks/High Energy Rock 70’S-2000’S</a></h3>
-          <time class="eaw-time published" datetime="">July 27, 2024, 7:00 pm  </time>																		    <div class="eaw-booknow"> <a href="https://www.eventbrite.com/e/aggressive-monkshigh-energy-rock-70s-2000s-tickets-885397165757#tickets" class="wfea-button button" target="_blank" aria-label="Book now » %4$s">Book now »</a></div>        </div>
-        </div>
-    </div>
-    
-    <div class="eaw-li__wrap">
-        <div class="eaw-li__flex eaw-clearfix eaw-aligncenter  event__available">
-          <div class="eaw-thumb-wrap" style="min-width:300px">
-                    <span>
-                     <a class="eaw-img eaw-aligncenter" href="https://www.eventbrite.com/e/mainstage-karaoke-sundays-tickets-943304558327#tickets" rel="bookmark" target="_blank"><img class="eaw-aligncenter eaw-thumb eaw-default-thumb" src="https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F803348059%2F106794499945%2F1%2Foriginal.20240708-064044?h=200&amp;w=450&amp;auto=format%2Ccompress&amp;q=75&amp;sharp=10&amp;rect=0%2C0%2C2160%2C1080&amp;s=6f4d8b3e86fc43ba6336f51e219c5047" alt="Mainstage Karaoke Sundays" width="300"></a>                 </span>
-      </div>
-              <div class="eaw-content-wrap">
-          <h3 class="eaw-title">
-      <a href="https://www.eventbrite.com/e/mainstage-karaoke-sundays-tickets-943304558327#tickets" title="Eventbrite link to Mainstage Karaoke Sundays" rel="bookmark" target="_blank">Mainstage Karaoke Sundays</a></h3>
-          <time class="eaw-time published" datetime="">July 28, 2024, 6:00 pm  </time>																		    <div class="eaw-booknow"> <a href="https://www.eventbrite.com/e/mainstage-karaoke-sundays-tickets-943304558327#tickets" class="wfea-button button" target="_blank" aria-label="Book now » %4$s">Book now »</a></div>        </div>
-        </div>
-    </div>
-    
-    <div class="eaw-li__wrap">
-        <div class="eaw-li__flex eaw-clearfix eaw-aligncenter  event__available">
-          <div class="eaw-thumb-wrap" style="min-width:300px">
-                    <span>
-                     <a class="eaw-img eaw-aligncenter" href="https://www.eventbrite.com/e/music-city-open-mic-tickets-936982980317#tickets" rel="bookmark" target="_blank"><img class="eaw-aligncenter eaw-thumb eaw-default-thumb" src="https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F798540919%2F106794499945%2F1%2Foriginal.20240629-072045?h=200&amp;w=450&amp;auto=format%2Ccompress&amp;q=75&amp;sharp=10&amp;s=1bc3c10f549dea03ffa4109a71196bd1" alt="Music City Open Mic" width="300"></a>                 </span>
-      </div>
-              <div class="eaw-content-wrap">
-          <h3 class="eaw-title">
-      <a href="https://www.eventbrite.com/e/music-city-open-mic-tickets-936982980317#tickets" title="Eventbrite link to Music City Open Mic" rel="bookmark" target="_blank">Music City Open Mic</a></h3>
-          <time class="eaw-time published" datetime="">July 30, 2024, 6:00 pm  </time>																		    <div class="eaw-booknow"> <a href="https://www.eventbrite.com/e/music-city-open-mic-tickets-936982980317#tickets" class="wfea-button button" target="_blank" aria-label="Book now » %4$s">Book now »</a></div>        </div>
-        </div>
-    </div>
-    
-    <div class="eaw-li__wrap">
-        <div class="eaw-li__flex eaw-clearfix eaw-aligncenter  event__available">
-          <div class="eaw-thumb-wrap" style="min-width:300px">
-                    <span>
-                     <a class="eaw-img eaw-aligncenter" href="https://www.eventbrite.com/e/mainstage-karaoke-sundays-tickets-943304568357#tickets" rel="bookmark" target="_blank"><img class="eaw-aligncenter eaw-thumb eaw-default-thumb" src="https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F803348059%2F106794499945%2F1%2Foriginal.20240708-064044?h=200&amp;w=450&amp;auto=format%2Ccompress&amp;q=75&amp;sharp=10&amp;rect=0%2C0%2C2160%2C1080&amp;s=6f4d8b3e86fc43ba6336f51e219c5047" alt="Mainstage Karaoke Sundays" width="300"></a>                 </span>
-      </div>
-              <div class="eaw-content-wrap">
-          <h3 class="eaw-title">
-      <a href="https://www.eventbrite.com/e/mainstage-karaoke-sundays-tickets-943304568357#tickets" title="Eventbrite link to Mainstage Karaoke Sundays" rel="bookmark" target="_blank">Mainstage Karaoke Sundays</a></h3>
-          <time class="eaw-time published" datetime="">August 4, 2024, 6:00 pm  </time>																		    <div class="eaw-booknow"> <a href="https://www.eventbrite.com/e/mainstage-karaoke-sundays-tickets-943304568357#tickets" class="wfea-button button" target="_blank" aria-label="Book now » %4$s">Book now »</a></div>        </div>
-        </div>
-    </div>
-    
-    <div class="eaw-li__wrap">
-        <div class="eaw-li__flex eaw-clearfix eaw-aligncenter  event__available">
-          <div class="eaw-thumb-wrap" style="min-width:300px">
-                    <span>
-                     <a class="eaw-img eaw-aligncenter" href="https://www.eventbrite.com/e/mainstage-karaoke-sundays-tickets-943304578387#tickets" rel="bookmark" target="_blank"><img class="eaw-aligncenter eaw-thumb eaw-default-thumb" src="https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F803348059%2F106794499945%2F1%2Foriginal.20240708-064044?h=200&amp;w=450&amp;auto=format%2Ccompress&amp;q=75&amp;sharp=10&amp;rect=0%2C0%2C2160%2C1080&amp;s=6f4d8b3e86fc43ba6336f51e219c5047" alt="Mainstage Karaoke Sundays" width="300"></a>                 </span>
-      </div>
-              <div class="eaw-content-wrap">
-          <h3 class="eaw-title">
-      <a href="https://www.eventbrite.com/e/mainstage-karaoke-sundays-tickets-943304578387#tickets" title="Eventbrite link to Mainstage Karaoke Sundays" rel="bookmark" target="_blank">Mainstage Karaoke Sundays</a></h3>
-          <time class="eaw-time published" datetime="">August 11, 2024, 6:00 pm  </time>																		    <div class="eaw-booknow"> <a href="https://www.eventbrite.com/e/mainstage-karaoke-sundays-tickets-943304578387#tickets" class="wfea-button button" target="_blank" aria-label="Book now » %4$s">Book now »</a></div>        </div>
-        </div>
-    </div>
-    
-    <div class="eaw-li__wrap">
-        <div class="eaw-li__flex eaw-clearfix eaw-aligncenter  event__available">
-          <div class="eaw-thumb-wrap" style="min-width:300px">
-                    <span>
-                     <a class="eaw-img eaw-aligncenter" href="https://www.eventbrite.com/e/music-city-sf-presents-the-wanderingslow-coast-said-sara-tickets-950568113817#tickets" rel="bookmark" target="_blank"><img class="eaw-aligncenter eaw-thumb eaw-default-thumb" src="https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F810378019%2F106794499945%2F1%2Foriginal.20240718-180601?h=200&amp;w=450&amp;auto=format%2Ccompress&amp;q=75&amp;sharp=10&amp;rect=0%2C0%2C2160%2C1080&amp;s=47eb67c2c2109117815736e96b387152" alt="Music City SF Presents the Wandering,Slow Coast &amp; Said Sara" width="300"></a>                 </span>
-      </div>
-              <div class="eaw-content-wrap">
-          <h3 class="eaw-title">
-      <a href="https://www.eventbrite.com/e/music-city-sf-presents-the-wanderingslow-coast-said-sara-tickets-950568113817#tickets" title="Eventbrite link to Music City SF Presents the Wandering,Slow Coast &amp; Said Sara" rel="bookmark" target="_blank">Music City SF Presents the Wandering,Slow Coast &amp; Said Sara</a></h3>
-          <time class="eaw-time published" datetime="">August 16, 2024, 7:00 pm  </time>																		    <div class="eaw-booknow"> <a href="https://www.eventbrite.com/e/music-city-sf-presents-the-wanderingslow-coast-said-sara-tickets-950568113817#tickets" class="wfea-button button" target="_blank" aria-label="Book now » %4$s">Book now »</a></div>        </div>
-        </div>
-    </div>
-    
-        </div>    </section><!-- Generated by https://wordpress.org/plugins/widget-for-eventbrite-api/ -->
-        </section>
+        <section id="evb_mcsf_item" class="wfea eaw-block evb_mcsf ">
+          <div class="eaw-ulx">
+            <div class="eaw-li__wrap">
+              <div class="eaw-li__flex eaw-clearfix eaw-aligncenter  event__started">
+                <div class="eaw-thumb-wrap" style="min-width:300px">
+                  <span>
+                    <a class="eaw-img eaw-aligncenter"
+                      href="https://www.eventbrite.com/e/aggressive-monkshigh-energy-rock-70s-2000s-tickets-885397165757#tickets"
+                      rel="bookmark" target="_blank"><img class="eaw-aligncenter eaw-thumb eaw-default-thumb"
+                        src="https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F746471339%2F106794499945%2F1%2Foriginal.20240418-060418?h=200&amp;w=450&amp;auto=format%2Ccompress&amp;q=75&amp;sharp=10&amp;s=d4cc1fe1181001bbe8a497e504c18336"
+                        alt="Aggressive Monks/High Energy Rock 70’S-2000’S" width="300"></a> </span>
+                </div>
+                <div class="eaw-content-wrap">
+                  <h3 class="eaw-title">
+                    <a href="https://www.eventbrite.com/e/aggressive-monkshigh-energy-rock-70s-2000s-tickets-885397165757#tickets"
+                      title="Eventbrite link to Aggressive Monks/High Energy Rock 70’S-2000’S" rel="bookmark"
+                      target="_blank">Aggressive Monks/High Energy Rock 70’S-2000’S</a>
+                  </h3>
+                  <time class="eaw-time published" datetime="">July 27, 2024, 7:00 pm </time>
+                  <div class="eaw-booknow"> <a
+                      href="https://www.eventbrite.com/e/aggressive-monkshigh-energy-rock-70s-2000s-tickets-885397165757#tickets"
+                      class="wfea-button button" target="_blank" aria-label="Book now » %4$s">Book now »</a></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="eaw-li__wrap">
+              <div class="eaw-li__flex eaw-clearfix eaw-aligncenter  event__available">
+                <div class="eaw-thumb-wrap" style="min-width:300px">
+                  <span>
+                    <a class="eaw-img eaw-aligncenter"
+                      href="https://www.eventbrite.com/e/mainstage-karaoke-sundays-tickets-943304558327#tickets"
+                      rel="bookmark" target="_blank"><img class="eaw-aligncenter eaw-thumb eaw-default-thumb"
+                        src="https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F803348059%2F106794499945%2F1%2Foriginal.20240708-064044?h=200&amp;w=450&amp;auto=format%2Ccompress&amp;q=75&amp;sharp=10&amp;rect=0%2C0%2C2160%2C1080&amp;s=6f4d8b3e86fc43ba6336f51e219c5047"
+                        alt="Mainstage Karaoke Sundays" width="300"></a> </span>
+                </div>
+                <div class="eaw-content-wrap">
+                  <h3 class="eaw-title">
+                    <a href="https://www.eventbrite.com/e/mainstage-karaoke-sundays-tickets-943304558327#tickets"
+                      title="Eventbrite link to Mainstage Karaoke Sundays" rel="bookmark" target="_blank">Mainstage
+                      Karaoke Sundays</a>
+                  </h3>
+                  <time class="eaw-time published" datetime="">July 28, 2024, 6:00 pm </time>
+                  <div class="eaw-booknow"> <a
+                      href="https://www.eventbrite.com/e/mainstage-karaoke-sundays-tickets-943304558327#tickets"
+                      class="wfea-button button" target="_blank" aria-label="Book now » %4$s">Book now »</a></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="eaw-li__wrap">
+              <div class="eaw-li__flex eaw-clearfix eaw-aligncenter  event__available">
+                <div class="eaw-thumb-wrap" style="min-width:300px">
+                  <span>
+                    <a class="eaw-img eaw-aligncenter"
+                      href="https://www.eventbrite.com/e/music-city-open-mic-tickets-936982980317#tickets"
+                      rel="bookmark" target="_blank"><img class="eaw-aligncenter eaw-thumb eaw-default-thumb"
+                        src="https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F798540919%2F106794499945%2F1%2Foriginal.20240629-072045?h=200&amp;w=450&amp;auto=format%2Ccompress&amp;q=75&amp;sharp=10&amp;s=1bc3c10f549dea03ffa4109a71196bd1"
+                        alt="Music City Open Mic" width="300"></a> </span>
+                </div>
+                <div class="eaw-content-wrap">
+                  <h3 class="eaw-title">
+                    <a href="https://www.eventbrite.com/e/music-city-open-mic-tickets-936982980317#tickets"
+                      title="Eventbrite link to Music City Open Mic" rel="bookmark" target="_blank">Music City Open
+                      Mic</a>
+                  </h3>
+                  <time class="eaw-time published" datetime="">July 30, 2024, 6:00 pm </time>
+                  <div class="eaw-booknow"> <a
+                      href="https://www.eventbrite.com/e/music-city-open-mic-tickets-936982980317#tickets"
+                      class="wfea-button button" target="_blank" aria-label="Book now » %4$s">Book now »</a></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="eaw-li__wrap">
+              <div class="eaw-li__flex eaw-clearfix eaw-aligncenter  event__available">
+                <div class="eaw-thumb-wrap" style="min-width:300px">
+                  <span>
+                    <a class="eaw-img eaw-aligncenter"
+                      href="https://www.eventbrite.com/e/mainstage-karaoke-sundays-tickets-943304568357#tickets"
+                      rel="bookmark" target="_blank"><img class="eaw-aligncenter eaw-thumb eaw-default-thumb"
+                        src="https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F803348059%2F106794499945%2F1%2Foriginal.20240708-064044?h=200&amp;w=450&amp;auto=format%2Ccompress&amp;q=75&amp;sharp=10&amp;rect=0%2C0%2C2160%2C1080&amp;s=6f4d8b3e86fc43ba6336f51e219c5047"
+                        alt="Mainstage Karaoke Sundays" width="300"></a> </span>
+                </div>
+                <div class="eaw-content-wrap">
+                  <h3 class="eaw-title">
+                    <a href="https://www.eventbrite.com/e/mainstage-karaoke-sundays-tickets-943304568357#tickets"
+                      title="Eventbrite link to Mainstage Karaoke Sundays" rel="bookmark" target="_blank">Mainstage
+                      Karaoke Sundays</a>
+                  </h3>
+                  <time class="eaw-time published" datetime="">August 4, 2024, 6:00 pm </time>
+                  <div class="eaw-booknow"> <a
+                      href="https://www.eventbrite.com/e/mainstage-karaoke-sundays-tickets-943304568357#tickets"
+                      class="wfea-button button" target="_blank" aria-label="Book now » %4$s">Book now »</a></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="eaw-li__wrap">
+              <div class="eaw-li__flex eaw-clearfix eaw-aligncenter  event__available">
+                <div class="eaw-thumb-wrap" style="min-width:300px">
+                  <span>
+                    <a class="eaw-img eaw-aligncenter"
+                      href="https://www.eventbrite.com/e/mainstage-karaoke-sundays-tickets-943304578387#tickets"
+                      rel="bookmark" target="_blank"><img class="eaw-aligncenter eaw-thumb eaw-default-thumb"
+                        src="https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F803348059%2F106794499945%2F1%2Foriginal.20240708-064044?h=200&amp;w=450&amp;auto=format%2Ccompress&amp;q=75&amp;sharp=10&amp;rect=0%2C0%2C2160%2C1080&amp;s=6f4d8b3e86fc43ba6336f51e219c5047"
+                        alt="Mainstage Karaoke Sundays" width="300"></a> </span>
+                </div>
+                <div class="eaw-content-wrap">
+                  <h3 class="eaw-title">
+                    <a href="https://www.eventbrite.com/e/mainstage-karaoke-sundays-tickets-943304578387#tickets"
+                      title="Eventbrite link to Mainstage Karaoke Sundays" rel="bookmark" target="_blank">Mainstage
+                      Karaoke Sundays</a>
+                  </h3>
+                  <time class="eaw-time published" datetime="">August 11, 2024, 6:00 pm </time>
+                  <div class="eaw-booknow"> <a
+                      href="https://www.eventbrite.com/e/mainstage-karaoke-sundays-tickets-943304578387#tickets"
+                      class="wfea-button button" target="_blank" aria-label="Book now » %4$s">Book now »</a></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="eaw-li__wrap">
+              <div class="eaw-li__flex eaw-clearfix eaw-aligncenter  event__available">
+                <div class="eaw-thumb-wrap" style="min-width:300px">
+                  <span>
+                    <a class="eaw-img eaw-aligncenter"
+                      href="https://www.eventbrite.com/e/music-city-sf-presents-the-wanderingslow-coast-said-sara-tickets-950568113817#tickets"
+                      rel="bookmark" target="_blank"><img class="eaw-aligncenter eaw-thumb eaw-default-thumb"
+                        src="https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F810378019%2F106794499945%2F1%2Foriginal.20240718-180601?h=200&amp;w=450&amp;auto=format%2Ccompress&amp;q=75&amp;sharp=10&amp;rect=0%2C0%2C2160%2C1080&amp;s=47eb67c2c2109117815736e96b387152"
+                        alt="Music City SF Presents the Wandering,Slow Coast &amp; Said Sara" width="300"></a> </span>
+                </div>
+                <div class="eaw-content-wrap">
+                  <h3 class="eaw-title">
+                    <a href="https://www.eventbrite.com/e/music-city-sf-presents-the-wanderingslow-coast-said-sara-tickets-950568113817#tickets"
+                      title="Eventbrite link to Music City SF Presents the Wandering,Slow Coast &amp; Said Sara"
+                      rel="bookmark" target="_blank">Music City SF Presents the Wandering,Slow Coast &amp; Said Sara</a>
+                  </h3>
+                  <time class="eaw-time published" datetime="">August 16, 2024, 7:00 pm </time>
+                  <div class="eaw-booknow"> <a
+                      href="https://www.eventbrite.com/e/music-city-sf-presents-the-wanderingslow-coast-said-sara-tickets-950568113817#tickets"
+                      class="wfea-button button" target="_blank" aria-label="Book now » %4$s">Book now »</a></div>
+                </div>
+              </div>
+            </div>
+            <div class="eaw-li__wrap">
+              <div class="eaw-li__flex eaw-clearfix eaw-aligncenter  event__available">
+                <div class="eaw-thumb-wrap" style="min-width:300px">
+                  <span>
+                    <a class="eaw-img eaw-aligncenter"
+                      href="https://www.eventbrite.com/e/music-city-sf-presents-the-wanderingslow-coast-said-sara-tickets-950568113817#tickets"
+                      rel="bookmark" target="_blank"><img class="eaw-aligncenter eaw-thumb eaw-default-thumb"
+                        src="https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F810378019%2F106794499945%2F1%2Foriginal.20240718-180601?h=200&amp;w=450&amp;auto=format%2Ccompress&amp;q=75&amp;sharp=10&amp;rect=0%2C0%2C2160%2C1080&amp;s=47eb67c2c2109117815736e96b387152"
+                        alt="Music City SF Presents the Wandering,Slow Coast &amp; Said Sara" width="300"></a> </span>
+                </div>
+                <div class="eaw-content-wrap">
+                  <h3 class="eaw-title">
+                    <a href="https://www.eventbrite.com/e/music-city-sf-presents-the-wanderingslow-coast-said-sara-tickets-950568113817#tickets"
+                      title="Eventbrite link to Music City SF Presents the Wandering,Slow Coast &amp; Said Sara"
+                      rel="bookmark" target="_blank">Music City SF Presents the Wandering,Slow Coast &amp; Said Sara</a>
+                  </h3>
+                  <time class="eaw-time published" datetime="">August 16, 2024, 7:00 pm </time>
+                  <div class="eaw-booknow"> <a
+                      href="https://www.eventbrite.com/e/music-city-sf-presents-the-wanderingslow-coast-said-sara-tickets-950568113817#tickets"
+                      class="wfea-button button" target="_blank" aria-label="Book now » %4$s">Book now »</a></div>
+                </div>
+              </div>
+            </div>
+            <div class="eaw-li__wrap">
+              <div class="eaw-li__flex eaw-clearfix eaw-aligncenter  event__available">
+                <div class="eaw-thumb-wrap" style="min-width:300px">
+                  <span>
+                    <a class="eaw-img eaw-aligncenter"
+                      href="https://www.eventbrite.com/e/music-city-sf-presents-the-wanderingslow-coast-said-sara-tickets-950568113817#tickets"
+                      rel="bookmark" target="_blank"><img class="eaw-aligncenter eaw-thumb eaw-default-thumb"
+                        src="https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F810378019%2F106794499945%2F1%2Foriginal.20240718-180601?h=200&amp;w=450&amp;auto=format%2Ccompress&amp;q=75&amp;sharp=10&amp;rect=0%2C0%2C2160%2C1080&amp;s=47eb67c2c2109117815736e96b387152"
+                        alt="Music City SF Presents the Wandering,Slow Coast &amp; Said Sara" width="300"></a> </span>
+                </div>
+                <div class="eaw-content-wrap">
+                  <h3 class="eaw-title">
+                    <a href="https://www.eventbrite.com/e/music-city-sf-presents-the-wanderingslow-coast-said-sara-tickets-950568113817#tickets"
+                      title="Eventbrite link to Music City SF Presents the Wandering,Slow Coast &amp; Said Sara"
+                      rel="bookmark" target="_blank">Music City SF Presents the Wandering,Slow Coast &amp; Said Sara</a>
+                  </h3>
+                  <time class="eaw-time published" datetime="">August 16, 2024, 7:00 pm </time>
+                  <div class="eaw-booknow"> <a
+                      href="https://www.eventbrite.com/e/music-city-sf-presents-the-wanderingslow-coast-said-sara-tickets-950568113817#tickets"
+                      class="wfea-button button" target="_blank" aria-label="Book now » %4$s">Book now »</a></div>
+                </div>
+              </div>
+            </div>
+            <div class="eaw-li__wrap">
+              <div class="eaw-li__flex eaw-clearfix eaw-aligncenter  event__available">
+                <div class="eaw-thumb-wrap" style="min-width:300px">
+                  <span>
+                    <a class="eaw-img eaw-aligncenter"
+                      href="https://www.eventbrite.com/e/music-city-sf-presents-the-wanderingslow-coast-said-sara-tickets-950568113817#tickets"
+                      rel="bookmark" target="_blank"><img class="eaw-aligncenter eaw-thumb eaw-default-thumb"
+                        src="https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F810378019%2F106794499945%2F1%2Foriginal.20240718-180601?h=200&amp;w=450&amp;auto=format%2Ccompress&amp;q=75&amp;sharp=10&amp;rect=0%2C0%2C2160%2C1080&amp;s=47eb67c2c2109117815736e96b387152"
+                        alt="Music City SF Presents the Wandering,Slow Coast &amp; Said Sara" width="300"></a> </span>
+                </div>
+                <div class="eaw-content-wrap">
+                  <h3 class="eaw-title">
+                    <a href="https://www.eventbrite.com/e/music-city-sf-presents-the-wanderingslow-coast-said-sara-tickets-950568113817#tickets"
+                      title="Eventbrite link to Music City SF Presents the Wandering,Slow Coast &amp; Said Sara"
+                      rel="bookmark" target="_blank">Music City SF Presents the Wandering,Slow Coast &amp; Said Sara</a>
+                  </h3>
+                  <time class="eaw-time published" datetime="">August 16, 2024, 7:00 pm </time>
+                  <div class="eaw-booknow"> <a
+                      href="https://www.eventbrite.com/e/music-city-sf-presents-the-wanderingslow-coast-said-sara-tickets-950568113817#tickets"
+                      class="wfea-button button" target="_blank" aria-label="Book now » %4$s">Book now »</a></div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </section><!-- Generated by https://wordpress.org/plugins/widget-for-eventbrite-api/ -->
+      </section>
     </div>
 
     <div
@@ -843,6 +843,169 @@
   </section>
 
   <!-- venue -->
+
+  <!-- rehearsal -->
+
+  <section class="min-w-full bg-primary md:h-[80vh] min-[100px]:h-[100vh] z-40 flex min-[100px]:flex-col md:flex-row  ">
+
+    <div class="object-cover md:h-[80vh] min-[100px]:h-[50vh] v-[50vw] md:flex items-center justify-center ">
+      <div class="absolute w-full md:h-[80vh] min-[100px]:h-[50vh] z-50">
+        <img src="../assets/filtro.png" class="relative w-full h-full top-0 left-0 z-10 object-cover ">
+      </div>
+      <video src="../assets/videos/Reharsal 16x9.mp4" alt="rehearsal studios" muted loop autoplay
+        class="object-cover h-[80vh] w-full md:absolute z-10">
+      </video>
+    </div>
+
+
+    <div class=" md:w-[50vw] w-full min-[100px]:h-[80vh]  text-white items-center justify-center bg-primary flex flex-col 
+    md:absolute right-0 h-[80vh] sm:h-[80vh] min-[100px]:p-6 ">
+      <div class=" md:h-1/3 flex md:w-full flex-col justify-between leading-[3vh] sm:items-center md:items-start ">
+        <span class="md:text-2xl font-bold min-[100px]:text-center md:text-left min-[100px]:text-base">Rehearsal
+          Studios /</span>
+        <span
+          class="sm:text-6xl font-druk-trial  font-normal flex-nowrap  min-[100px]:text-center md:text-left min-[100px]:text-5xl">TAKE
+          YOUR REHEARSAL
+          <br />TO THE NEXT LEVEL /</span>
+        <div class="leading-[3vh] pt-4 w-full justify-center items-center min-[100px]:text-center flex ">
+          <p
+            class="font-normal sm:w-[90%] sm:text-xl min-[100px]:text-[15px] md:text-left min-[100px]:w-full flex sm:w-full sm:text-center md:text-sm min-[100px]:text-center md:text-left">
+            Whether you're a solo project or a
+            band, uor brand-new music
+            <br />rehearsal studios are affordable for all musicians.
+          </p>
+        </div>
+      </div>
+      <div class="flex items-end justify-end md:w-4/6 mt-28 min-[100px]:w-full ">
+        <button class="md:w-36 flex min-[100px]:w-full font-druk-trial font-normal p-2 text-2xl border-2 justify-center items-center 
+          hover:text-primary hover:bg-white hover:border-primary transition duration-500"><a
+            href="https://musiccitysf.com/rehearsal/studios/">SEE ALL STUDIOS</a></button>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- rehearsal -->
+
+  <!-- hotel -->
+  <style>
+    .carousel-item {
+      min-width: calc(100% / 3);
+    }
+  </style>
+
+  <section
+    class="flex flex-col md:flex-row bg-secondary min-w-full md:h-[90vh] min-[100px]:h-[90vh] h-[100vh] min-[100px]:m-0 min-[100px]:p-0 items-center justify-center">
+    <div class="absolute md:w-full md:h-full min-[100px]:h-[90vh] h-[100vh] ">
+      <img src="../assets/Site_BG_RED.png" class="relative w-full h-full top-0 left-0 z-10 object-cover ">
+    </div>
+    <div class="flex flex-col text-white justify-center items-start w-[80%] h-[90%] z-20 ">
+      <div
+        class="flex flex-col md:items-start md:justify-start md:w-[35%] w-full min-[100px]:justify-center min-[100px]:items-center">
+        <div
+          class="flex flex-col font-druk-trial tracking-wide text-[5vw] font-normal w-full leading-[4vh] 
+        justify-start p-0 m-0 sm:items-center md:items-start min-[100px]:justify-center min-[100px]:items-center min-[100px]:text-center">
+          <span class="sm:text-4xl font-bold md:mb-5 min-[100px]:text-2xl">Hotel /</span>
+          <span class="sm:text-7xl font-druk-trial font-normal sm:text-center md:text-left min-[100px]:text-3xl ">THE
+            ONLY
+            <br />HOTEL THAT
+            <br />ROCKS
+          </span>
+        </div>
+
+        <div
+          class=" min-[100px]:leading-3 sm:w-full sm:items-center md:items-start min-[100px]:justify-center min-[100px]:items-center">
+          <div
+            class="flex flex-col font-medium mt-5 sm:text-center md:text-left md:items-start md:justify-start min-[100px]:justify-center min-[100px]:items-center">
+            <p class="leading-5 min-[100px]:text-center md:text-left min-[100px]:text-sm">We're the only music-themed
+              hotel & hostel
+              <br />in San Francisco built directly into Music City
+              <br />San Francisco!
+            </p>
+          </div>
+
+          <div class="flex flex-col font-medium mt-3 sm:text-center md:text-left">
+            <p class="leading-5 min-[100px]:text-center md:text-left min-[100px]:text-sm">Travel and make new friends by
+              staying in our
+              <br />hostel rooms, jam with the SF local talent in
+              <br />the rehearsal studios or karaoke rooms, and
+              <br />experience live music like no hotel has ever
+              <br />done before in our on-site venues!
+            </p>
+
+          </div>
+        </div>
+        <div class="flex w-full justify-end items-end mt-4 min-[100px]:w-full  ">
+          <button class="md:w-36 flex font-druk-trial font-normal p-2 text-2xl border-2  justify-center items-center 
+          hover:text-primary hover:border-primary transition duration-500 min-[100px]:w-full "><a
+              href="https://musiccitysf.com/hotel/#rooms">OUR
+              ROOMS</a></button>
+        </div>
+      </div>
+    </div>
+
+    <div class="md:absolute md:right-0 hidden md:flex z-20 ">
+      <div class="md:relative w-[60vw] max-w-5xl overflow-hidden md:h-[70vh] md:h-[50vh] flex z-50 ">
+        <div id="carousel" class="flex transition-transform duration-300 md:h-full items-end  ">
+          <div class="carousel-item flex-shrink-0 py-2 px-2 w-[35%] h-[60vh] ">
+            <img src="../assets/carousel/carousel-1.jpg" alt="Item 2" class="w-full h-[55vh] object-cover">
+          </div>
+          <div class="carousel-item flex-shrink-0 py-2 px-2 w-[35%] h-[60vh] ">
+            <img src="../assets/carousel/carousel-2.png" alt="Item 3" class="w-full h-[55vh] object-cover">
+          </div>
+          <div class="carousel-item flex-shrink-0 py-2 px-2 w-[35%] h-[60vh] ">
+            <img src="../assets/carousel/carousel-3.png" alt="Item 4" class="w-full h-[55vh] object-cover">
+          </div>
+          <div class="carousel-item flex-shrink-0 py-2 px-2 w-[35%] h-[60vh] ">
+            <img src="../assets/carousel/carousel-4.png" alt="Item 5" class="w-full h-[55vh] object-cover">
+          </div>
+          <div class="carousel-item flex-shrink-0 py-2 px-2 w-[35%] h-[60vh] r">
+            <img src="../assets/carousel/carousel-5.png" alt="Item 6" class="w-full h-[55vh] object-cover">
+          </div>
+          <div class="carousel-item flex-shrink-0 py-2 px-2 w-[35%] h-[60vh] ">
+            <img src="../assets/carousel/carousel-6.png" alt="Item 2" class="w-full h-[55vh] object-cover">
+          </div>
+        </div>
+
+        <button onclick="prevSlide()" class="md:absolute bottom-[-1vh] left-[60%] transform -translate-y-1/2 bg-white text-black px-2 hover:bg-primary hover:text-white transition duration-500
+          rounded-full shadow-md focus:outline-none">
+          &lt;
+        </button>
+        <button onclick="nextSlide()" class="md:absolute bottom-[-1vh] right-[25%] transform -translate-y-1/2 bg-white text-black px-2 hover:bg-primary hover:text-white transition duration-500
+          rounded-full shadow-md focus:outline-none">
+          &gt;
+        </button>
+      </div>
+      <script>
+        let currentSlide = 0;
+        const totalItems = document.querySelectorAll('#carousel .carousel-item').length;
+        const visibleItems = 2; // Quantos itens são visíveis de cada vez
+
+        function updateCarousel() {
+          document.getElementById('carousel').style.transform = `translateX(-${currentSlide * (100 / visibleItems)}%)`;
+        }
+
+        function nextSlide() {
+          currentSlide = (currentSlide + 1) % (totalItems / visibleItems);
+          updateCarousel();
+        }
+
+        function prevSlide() {
+          currentSlide = (currentSlide - 1 + (totalItems / visibleItems)) % (totalItems / visibleItems);
+          updateCarousel();
+        }
+
+        // Initialize carousel
+        updateCarousel();
+      </script>
+
+    </div>
+
+  </section>
+
+  <!-- hotel -->
+
+
 
   <!-- hall of fame -->
   <section class="flex bg-primary sm:h-[90vh] min-w-full min-[100px]:h-[50vh] justify-center text-white z-30">
@@ -858,8 +1021,8 @@
         tracking-normal min-[100px]:w-full min-[100px]:text-3xl text-nowrap	">
         <span>HALL OF FAME</span>
       </div>
-      <div class=" md:w-2/3 md:h-4/5 flex justify-end items-end min-[100px]:w-full">
-        <button class=" text-white duration-500 py-2 px-9 border-2 hover:bg-white hover:text-primary md:w-[12vw] font-druk-trial font-normal 
+      <div class=" md:w-2/4 md:h-4/5 flex justify-end items-end min-[100px]:w-full">
+        <button class=" text-white duration-500 py-2 px-9 border-2 hover:bg-white hover:text-primary md:w-full font-druk-trial font-normal 
           hover:border-primary transition md:text-2xl text-3xl tracking-widest min-[100px]:w-full text-nowrap  "><a
             href="https://musiccitysf.com/hall-of-fame/">LEARN MORE</a>
         </button>
@@ -887,9 +1050,9 @@
             <div class="flex flex-col font-druk-trial tracking-wide text-[5vw] font-normal md:leading-[9vh] 
               leading-[5vh] justify-start p-0 m-0 min-[100px]:w-full sm:items-center md:items-start">
               <span
-                class="sm:text-4xl font-druk-trial font-normal md:mb-5 md:text-left min-[100px]:text-center min-[100px]:text-xl">About/</span>
+                class="sm:text-4xl font-druk-trial font-normal md:mb-5 md:text-left min-[100px]:text-center min-[100px]:text-3xl">About/</span>
               <span
-                class="min-[100px]:w-full min-[100px]:text-2xl md:text-6xl sm:text-center md:text-left min-[100px]:text-center ">WE
+                class="min-[100px]:w-full min-[100px]:text-5xl md:text-6xl sm:text-center md:text-left min-[100px]:text-center ">WE
                 KEEP THE
                 <br /> CANDLE
                 BURNING</span>
@@ -897,8 +1060,8 @@
 
             <div class="leading-[3vh] w-full">
               <div
-                class=" md:text-left min-[100px]:text-center min-[100px]:text-wrap w-full flex flex-col justify-center items-center md:nowrap min-[100px]:text-xs md:text-[90%] md:leading-5 font-medium my-3 sm:text-center md:text-left md:text-nowrap ">
-                <p class="min-[100px]:w-[70%] sm:w-full">Music City San Francisco is the a music HUB that San Francisco
+                class=" md:text-left min-[100px]:text-center w-full flex flex-col justify-center items-center md:leading-5 font-medium my-3 sm:text-center md:text-left ">
+                <p class="min-[100px]:w-[70%] sm:w-full min-[100px]:text-xs sm:text-[15px] md:text-[12px] lg:text-[15px]">Music City San Francisco is the a music HUB that San Francisco
                   <br />has been waiting for. Founded by musician Rudy colombini, MCSF
                   <br />is designed with the community in mind, built to to keep the
                   <br />Bay Area Legacy alive!
@@ -934,7 +1097,7 @@
     <div
       class="flex md:w-[70%] bg-secondary md:h-[70%] py-5 min-[100px]:w-full min-[100px]:h-full min-[100px]:flex-col md:flex-row justify-center items-center">
       <ul
-        class="md:w-[70%] min-[100px]:w-[80%] min-[100px]:h-[80%] md:h-full flex justify-center items-center flex-wrap gap-5 min-[100px]:flex-col md:flex-row">
+        class="md:w-[70%] min-[100px]:w-[80%] min-[100px]:h-[80%] md:h-full flex justify-center items-center sm:flex-wrap min-[100px]:flex-nowrap gap-5 min-[100px]:flex-col md:flex-row">
         <li class="bg-primary sm:w-[30%] sm:h-[45%] min-[100px]:w-full min-[100px]:h-[30%]">
           <a class="w-full h-full" href="https://www.instagram.com/p/C8DLK10Sur5/">
             <img class="w-full h-full object-cover"
@@ -953,19 +1116,19 @@
               src="https://musiccitysf.com/wp-content/uploads/sb-instagram-feed-images/425951941_351816161015563_3113778336680780353_nfull.jpg" />
           </a>
         </li>
-        <li class="bg-primary sm:w-[30%] sm:h-[45%] min-[100px]:w-full min-[100px]:h-[30%] min-[100px]:hidden sm:flex ">
+        <li class="bg-primary sm:w-[30%] sm:h-[45%] min-[100px]:w-full min-[100px]:h-[30%] min-[100px]:hidden sm:flex min-[812px]:flex  ">
           <a class="w-full h-full" href="https://www.instagram.com/p/C6cbgEzv6_y/">
             <img class="w-full h-full object-cover"
               src="https://musiccitysf.com/wp-content/uploads/sb-instagram-feed-images/441168345_311387205339688_1083918471349541584_nfull.webp" />
           </a>
         </li>
-        <li class="bg-primary sm:w-[30%] sm:h-[45%] min-[100px]:w-full min-[100px]:h-[30%] min-[100px]:hidden sm:flex">
+        <li class="bg-primary sm:w-[30%] sm:h-[45%] min-[100px]:w-full min-[100px]:h-[30%] min-[100px]:hidden sm:flex min-[768px]:hidden min-[812px]:flex">
           <a class="w-full h-full" href="https://www.instagram.com/p/C3X9rNorNd1/">
             <img class="w-full h-full object-cover"
               src="https://musiccitysf.com/wp-content/uploads/sb-instagram-feed-images/427463319_367282259571559_6099404657581187995_nfull.jpg" />
           </a>
         </li>
-        <li class="bg-primary sm:w-[30%] sm:h-[45%] min-[100px]:w-full min-[100px]:h-[30%] min-[100px]:hidden sm:flex">
+        <li class="bg-primary sm:w-[30%] sm:h-[45%] min-[100px]:w-full min-[100px]:h-[30%] min-[100px]:hidden sm:flex min-[768px]:hidden min-[812px]:flex" >
           <a class="w-full h-full" href="https://www.instagram.com/p/C2sxuL1yhIf/">
             <img class="w-full h-full object-cover"
               src="https://musiccitysf.com/wp-content/uploads/sb-instagram-feed-images/422773312_794172065855606_6399533165019698462_nfull.jpg" />
@@ -1211,18 +1374,19 @@
 
   <section
     class="bg-primary min-w-full h-[50vh] flex justify-center items-center text-white font-druk-bold font-medium">
-    <div class="w-[80%] flex md:flex-row flex-col">
+    <div class="w-[80%] flex md:flex-row min-[100px]:flex-col justify-items-center">
 
-      <div class=" md:w-[40vw] md:h-[27vh] h-[20vh] mt-8 flex justify-between items-center flex-col">
+      <div
+        class=" md:w-[40vw] md:h-[27vh] h-[20vh] sm:mt-8 min-[100px]:mt-0 flex justify-between items-center sm:flex-col min-[100px]:flex-row">
 
-        <ul class="flex justify-between w-full min-[100px]:text-xs sm:text-sm ">
-          <li class="border-b-2 transition duration-500 hover:opacity-70 cursor-pointer "><a
+        <ul class="flex justify-between w-full min-[100px]:text-xs sm:text-sm min-[100px]:flex-col sm:flex-row ">
+          <li class="transition duration-500 hover:opacity-70 cursor-pointer "><a class="border-b-2"
               href="https://musiccitysf.com/about-us/history/">Our History</a></li>
-          <li class="border-b-2 transition duration-500 hover:opacity-70 cursor-pointer"><a
+          <li class="transition duration-500 hover:opacity-70 cursor-pointer"><a class="border-b-2"
               href="https://musiccitysf.com/about-us/contact-us/">Contact US</a></li>
-          <li class="border-b-2 transition duration-500 hover:opacity-70 cursor-pointer"><a
+          <li class="transition duration-500 hover:opacity-70 cursor-pointer"><a class="border-b-2"
               href="https://musiccitysf.com/about-us/media/">Media</a></li>
-          <li class="border-b-2 transition duration-500 hover:opacity-70 cursor-pointer"><a
+          <li class="transition duration-500 hover:opacity-70 cursor-pointer"><a class="border-b-2"
               href="https://musiccitysf.com/about-us/faq/">FAQ</a></li>
         </ul>
         <div
@@ -1231,8 +1395,8 @@
           <div class="flex justify-center items-center min-[100px]:text-xs sm:text-sm">
 
             <a href="https://www.facebook.com/MusicCitySF/">
-              <svg class="w-[5vw] flex justify-center items-center" viewBox=" 0 0 48 48" version="1.1"
-                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+              <svg class="sm:w-[5vw] min-[100px]:w-[45px] flex justify-center items-center" viewBox=" 0 0 48 48"
+                version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>Facebook</title>
                 <g id="Icon/Social/facebook-black" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                   <path
@@ -1243,8 +1407,8 @@
             </a>
 
             <a href="https://www.instagram.com/musiccitysanfrancisco/">
-              <svg class="w-[5vw]" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg"
-                xmlns:xlink="http://www.w3.org/1999/xlink">
+              <svg class="sm:w-[5vw] min-[100px]:w-[45px]" viewBox="0 0 48 48" version="1.1"
+                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>Instagram</title>
                 <g id="Icon/Social/instagram-black" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                   <path
@@ -1255,8 +1419,8 @@
             </a>
 
             <a href="https://www.tiktok.com/@musiccitysf">
-              <svg class="w-[5vw]" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg"
-                xmlns:xlink="http://www.w3.org/1999/xlink">
+              <svg class="sm:w-[5vw] min-[100px]:w-[45px]" viewBox="0 0 48 48" version="1.1"
+                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>Tiktok</title>
                 <g id="Icon/Social/tiktok-black" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                   <path
@@ -1270,11 +1434,12 @@
         </div>
       </div>
 
-      <div class=" md:w-[21vw] h-full md:flex justify-center items-center hidden ">
-        <img src="../assets/MCSF-Redish-logo.png" class="object-cover w-full md:pt-[5vh] ">
+      <div class="sm:w-[21vw] h-full flex justify-center items-center align-center min-[100px]:w-[100%]">
+        <img src="../assets/MCSF-Redish-logo.png"
+          class="object-cover flex w-full md:pt-[5vh] min-[100px]:w-[20vw] sm:w-full">
       </div>
       <div
-        class=" md:w-[39vw] md:h-[34vh] h-[20vh] md:py-[3vh]  relative flex justify-end items-end min-[100px]:text-xs sm:text-sm">
+        class=" md:w-[39vw] md:h-[34vh] sm:h-[20vh] md:py-[3vh] min-[100px]:text-xs relative flex sm:justify-end sm:items-end sm:text-sm min-[100px]:justify-center min-[100px]:items-center min-[100px]:h-[10vh]">
         <p>© 2024 Music City San Francisco</p>
       </div>
     </div>
